@@ -1,0 +1,168 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require font-awesome
+ *= require_self
+
+ *= require slick
+ *= require slick-theme
+ */
+
+
+body{
+	background-color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Oswald,sans-serif;
+    letter-spacing: 1px;
+    margin: 16px 0;
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 37px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+
+/************************************NAVIGATION***********************************/
+
+.nav-bar{
+	text-align: center;
+	margin-top: 20px;
+	font-family: Open Sans,sans-serif;
+	letter-spacing: 1px;
+}
+
+.nav-center{
+	text-align: center;
+	display: inline-block !important;
+
+}
+
+.nav-right{
+	float: right;
+	display: inline-block;
+}
+
+.nav-left{
+	float: left;
+	display: inline-block;
+}
+
+
+.nav-center,
+.nav-right{
+	a{
+		color: rgb(255, 255, 255) !important;
+	    font-weight: 500;
+	    opacity: 0.6;
+	    transition: opacity 0.3s ease-in-out;
+
+	    &:hover{
+	    	color: rgb(255, 255, 255);
+    		opacity: 1;
+	    }
+	}
+}
+
+.active{
+	color: rgb(255, 255, 255) !important;
+    opacity: 1 !important;
+}
+
+/************************************NAVIGATION***********************************/
+
+.home-slider{
+	position: absolute !important;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+
+	img{
+		width: 100%;
+	}
+
+	.slick-dots{
+		position: absolute;
+	    bottom: 15px;
+
+	    li{
+			color: #fff;
+			background-color: #fff;
+			border: 1px solid #fff;
+			border-radius: 12px;
+			height: 10px;
+			width: 10px;
+			margin-bottom: 10px;
+
+			button{
+				display: none;
+			}
+		}
+
+		.slick-active{
+			background-color: #3097D1;
+			border: 1px solid #3097D1;
+		}
+	}
+}
+
+.home-slider-overlay{
+	background-color: rgba(0,24,40,.55);
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.home-slider-content{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -khtml-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 20% 0 20%;
+    text-align: center;
+
+    h2{
+    	color: #fff;
+    }
+
+    h5{
+    	color: #fff;
+    	font-family: Open Sans,sans-serif;
+    }
+}
+
+
+    
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Static version of css will use Glyphicons sprites by default
+  =require twitter-bootstrap-static/sprites
+*/
+
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.navbar-collapse.collapse{
+	display: inline-block !important;
+}
+
+.navbar-brand{
+	color: #fff !important;
+}
