@@ -23,7 +23,22 @@
 				<% else %>
 					<li><%= link_to_unless_current "Español", locale: "es" %></li>
 				<% end %>
+				<% if !current_user %>
+					<li>
+						<%= active_link_to new_user_session_path do %>
+							<i class="fa fa-user-circle"></i>
+						<% end %>
+					</li>
+				<% else %>
+					<li>
+						<%= link_to new_user_session_path do %>
+							<i class="fa fa-plus-circle"></i>
+						<% end %>
+					</li>
+			    <% end %>
 			</ul>
 		</div>
 	</div>
 </div>
+
+	

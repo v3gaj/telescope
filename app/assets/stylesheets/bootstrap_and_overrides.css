@@ -17,3 +17,14 @@
 .navbar-brand{
 	color: #fff !important;
 }
+
+.col-lg-6{
+	margin: 0 auto;
+	float: none;
+}
+
+.panel-links,
+.panel-heading{
+	text-align: center;
+}
+

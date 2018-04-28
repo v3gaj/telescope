@@ -21,11 +21,16 @@
 
 $(document).on('turbolinks:load', function() {
 
-	
-	homeSliderHeight();
+	showAnimation();
 	homeSlider();
-
+	
 });
+
+function showAnimation(){
+  setTimeout(function() {
+    $('.animation-wrapper').css({ opacity: "1"});
+  }, 500);
+}
 
 function homeSlider(){
 	$('.home-slider').slick({
@@ -39,12 +44,19 @@ function homeSlider(){
 	  	pauseOnHover: false,
 		cssEase: 'linear'
 	});
+
+	homeSliderHeight(); // Execute after slick slider
 }
 
 function homeSliderHeight(){
 	var array = $( ".slide img" ).toArray()
 	var height = 0;
 	var win = $(window).height();
+	var menuOffset = $('.navbar').offset();
+	var menuHeight = $('.navbar').height();
+
+	var menu = menuOffset.top + menuHeight;
+	var menu = win - menu;
 
 	for (var i = 0; i < array.length; i++) {
 		var attribute = $(array[i]).height();
@@ -55,15 +67,19 @@ function homeSliderHeight(){
 		}
 	}
 
-	console.log(win);
-	console.log(height);
-
 	if (height > win) {
 		$('#home-slider').css('height', win);
 	    $('#home-slider .slide').css('height', win);
+	    $('.home-slider-wrapper').css('height', menu);
+
 	}else{
 		$('#home-slider').css('height', height);
 	    $('#home-slider .slide').css('height', height);
+	    $('.home-slider-wrapper').css('height', menu);
+	}
+
+	if (win == 0) {
+		homeSliderHeight();
 	}
 }
 

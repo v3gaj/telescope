@@ -6,7 +6,7 @@ ruby '2.5.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
-gem 'pg'
+gem 'mysql2', '~> 0.4.7'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -38,13 +38,13 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # CUSTOM GEMS
 
-#gem 'devise'
+gem 'devise'
 gem 'twitter-bootstrap-rails'
-#gem 'devise-bootstrap-views'
+gem 'devise-bootstrap-views'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 #gem 'friendly_id', '~> 5.1.0'
-#gem "paperclip"
+gem "paperclip"
 #gem 'bcrypt', '~> 3.1.7'
 gem 'active_link_to'
 # gem 'masonry-rails'

@@ -1,5 +1,6 @@
 class IndexController < ApplicationController
   def home
+  	@slides = Slide.all
   end
 
   def services

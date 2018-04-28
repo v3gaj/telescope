@@ -35,3 +35,10 @@ es:
     services: "Servicios"
     about: "Nosotros"
     contact: "Contacto"
+  activerecord:
+    attributes:
+      slide:
+        title: "Título"
+        subtitle: "Subtítulo"
+        background: "Fondo"
+        
