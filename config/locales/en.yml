@@ -35,3 +35,12 @@ en:
     services: "Services"
     about: "About"
     contact: "Contact"
+  index:
+    home:
+      read_more: "Read more"
+  errors:
+    messages:
+      not_blank: "can't be blank"
+      incorrect_format: "has a format not allowed"
+      exceeds_size: "size must be in between 0 Bytes and 3 MB"
+      save_prohibited: "prohibited this %{model} from being saved:"

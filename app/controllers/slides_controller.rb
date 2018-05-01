@@ -25,12 +25,12 @@ class SlidesController < ApplicationController
   # POST /slides.json
   def create
     @slide = Slide.new(slide_params)
-
     respond_to do |format|
       if @slide.save
-        format.html { redirect_to @slide, notice: 'Slide was successfully created.' }
+        format.html { redirect_to slides_url, notice: 'Slide was successfully created.' }
         format.json { render :show, status: :created, location: @slide }
       else
+        remove_paperclip_errors(@slide.errors)
         format.html { render :new }
         format.json { render json: @slide.errors, status: :unprocessable_entity }
       end
@@ -42,9 +42,10 @@ class SlidesController < ApplicationController
   def update
     respond_to do |format|
       if @slide.update(slide_params)
-        format.html { redirect_to @slide, notice: 'Slide was successfully updated.' }
+        format.html { redirect_to slides_url, notice: 'Slide was successfully updated.' }
         format.json { render :show, status: :ok, location: @slide }
       else
+        remove_paperclip_errors(@slide.errors)
         format.html { render :edit }
         format.json { render json: @slide.errors, status: :unprocessable_entity }
       end
@@ -70,5 +71,14 @@ class SlidesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def slide_params
       params.require(:slide).permit(:title, :subtitle, :url, :background)
+    end
+
+    def remove_paperclip_errors(errors)
+      errors.each do |error|
+        puts error
+        if error =~ /file_size/ or error =~ /content_type/
+          errors.delete(error)
+        end
+      end
     end
 end

@@ -53,6 +53,8 @@ gem 'active_link_to'
 # gem 'bootstrap-will_paginate', '0.0.10'
 gem 'jquery-slick-rails'
 gem 'meta-tags'
+gem 'globalize', git: 'https://github.com/globalize/globalize'
+gem 'activemodel-serializers-xml'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

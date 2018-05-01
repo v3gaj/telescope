@@ -17,19 +17,21 @@
   </head>
   <body>
 
-    <%= render 'layouts/nav_bar' %>
+    <%= render 'layouts/header' %>
+    <% if !(params[:controller] == 'index' && params[:action] == 'home') %>
+        <div class="header-background animation-wrapper"></div>
+    <% end %>
     <div class="animation-wrapper">
       <div class="container">
-        <div class="row col-lg-12">
+        <div class="col-lg-12 alert-max-width">
             <%= bootstrap_flash %>
         </div>
       </div>
       <%= yield %>
     </div> 
-
-    <footer>
-    </footer>
-
-
+    <div class="scroll-top">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

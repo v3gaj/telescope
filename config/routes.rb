@@ -7,7 +7,10 @@ Rails.application.routes.draw do
 		match 'contact', to: 'index#contact', :via => 'get'
 
 		devise_for :users
-  		resources :slides
+  		resources :slides, :except => [:show]
+
+  		# Message Mailer
+  		post 'contact', to: 'messages#create'
 	end
 	get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
 	get '', to: redirect("/#{I18n.default_locale}")

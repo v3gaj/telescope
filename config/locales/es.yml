@@ -35,10 +35,21 @@ es:
     services: "Servicios"
     about: "Nosotros"
     contact: "Contacto"
+  index:
+    home:
+      read_more: "Ver mas"
   activerecord:
     attributes:
       slide:
         title: "Título"
         subtitle: "Subtítulo"
         background: "Fondo"
-        
+    models:
+      slide: "Slide"
+  errors:
+    messages:
+      not_blank: "debe ser completado"
+      incorrect_format: "tiene un formato no permitido"
+      exceeds_size: "debe tener un tamaño de entre 0 Bytes y 3 MB"
+      save_prohibited: "no permiten guardar este %{model}:"
+ 

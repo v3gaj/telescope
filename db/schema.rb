@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_27_212003) do
+ActiveRecord::Schema.define(version: 2018_04_28_163047) do
+
+  create_table "slide_translations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "slide_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "subtitle"
+    t.index ["locale"], name: "index_slide_translations_on_locale"
+    t.index ["slide_id"], name: "index_slide_translations_on_slide_id"
+  end
 
   create_table "slides", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
