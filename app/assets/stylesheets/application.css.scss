@@ -295,15 +295,15 @@ hr{
 }
 
 .header-background{
-	background-image: url(<%= asset_path 'bannerh.jpg' %>);
+	background-image: url(bannerh.jpg);
 }
 
 .contact-background{
-	background-image: url(<%= asset_path 'banner1.jpg' %>);
+	background-image: url(banner1.jpg);
 }
 
 .about-background{
-	background-image: url(<%= asset_path 'banner2.jpg' %>);
+	background-image: url(banner1.jpg);
 }
 
 .about-background,
