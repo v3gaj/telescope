@@ -803,7 +803,7 @@ hr{
 
 .parallax-about{
 	position: static;
-    background-image: asset-url("rock.jpg");
+    background-image: url('rocks.jpg');
     background-position: 50% 0;
     background-attachment: fixed;
     -webkit-background-size: cover;
