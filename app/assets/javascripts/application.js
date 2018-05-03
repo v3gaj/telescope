@@ -24,6 +24,7 @@ $(document).on('turbolinks:load', function() {
 	showAnimation();
 	scrollMenu();
 	homeSlider();
+	aboutSlider();
 	hideHeaderImage();
 	scrollTop();
 	showScrollTop();
@@ -50,6 +51,18 @@ function homeSlider(){
 		autoplay: true,
 	  	autoplaySpeed: 4000,
 	  	pauseOnHover: false,
+		cssEase: 'linear'
+	});
+}
+
+function aboutSlider(){
+	$('.about-slider').slick({
+		arrows: false,
+		dots: true,
+		infinite: true,
+		speed: 500,
+		autoplay: true,
+	  	autoplaySpeed: 4000,
 		cssEase: 'linear'
 	});
 }
