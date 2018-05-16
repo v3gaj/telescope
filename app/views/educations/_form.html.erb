@@ -1,0 +1,41 @@
+<%= form_for([@user, @education], :remote => true, :html => { :class => "form-horizontal education" }) do |f| %>
+
+  <div id="render-education-errors"></div>
+
+  <div class="col-lg-12 education-input-wrapper">
+    <%= f.select :degree_id, options_for_select(@degrees.map{|p|[p.title, p.id]}, :selected => f.object.degree_id), 
+                :prompt => t('educations.form.grade'), 
+                :class => 'form-control form-education' %>
+  </div>
+  <div class="col-lg-12 education-input-wrapper">
+    <%= f.text_field :study_field, :placeholder => true, :class => 'form-control form-education' %>
+  </div>
+  <div class="col-lg-12 education-input-wrapper">
+    <%= f.text_field :institution, :placeholder => true, :class => 'form-control form-education' %>
+  </div>
+  <div class="col-lg-6 education-input-wrapper">
+    <div class="input-group">
+      <span class="input-group-addon"><%= f.label :start_date %></span>
+      <%= f.select :start_date, options_for_select((Education::FORMSTARTYEAR..Time.now.year).to_a.reverse, :selected => f.object.start_date), :prompt => t('educations.form.select_year'), :class => 'form-control form-education' %>
+    </div>
+  </div>
+  <div class="col-lg-6 education-input-wrapper">
+    <div class="input-group">
+      <span class="input-group-addon"><%= f.label :end_date %></span>
+      <%= f.select :end_date, options_for_select(((Education::FORMSTARTYEAR..Time.now.year).to_a.reverse).unshift('Not completed'), :selected => f.object.end_date), :prompt => t('educations.form.select_year'), :class => 'form-control form-education' %>
+    </div>
+  </div>
+  <div class="col-lg-12 education-input-wrapper last-form-element">
+    <%= f.text_area :description, :placeholder => true, :rows => 4, :class => 'form-control form-education' %>
+  </div>
+
+  <div class="education-button-group">
+    <div class="col-lg-12 action-buttons-center">
+      <%= f.submit(@education.new_record? ? t('.create', :default => t("helpers.links.create")) : 
+                                      t('.update', :default => t("helpers.links.update")), class: 'btn btn-primary btn-blue') %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                cancel_educations_path(user_id: @user.id), :class => 'btn btn-default btn-white', :remote => true %>
+    </div>
+  </div>
+
+<% end %>    

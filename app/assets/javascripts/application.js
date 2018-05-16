@@ -18,6 +18,10 @@
 //= require_tree .
 
 //= slick
+//= dropify
+
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales
 
 $(document).on('turbolinks:load', function() {
 
@@ -25,15 +29,22 @@ $(document).on('turbolinks:load', function() {
 	scrollMenu();
 	homeSlider();
 	aboutSlider();
+	bootstrapWysihtml5();
 	hideHeaderImage();
 	scrollTop();
 	showScrollTop();
 	serviceTabs();
+	toolpit();
 	$(".slide img").load(function(){
 	  homeSliderHeight();
 	});
-	
+	$('.dropify').dropify();
+	adjustImageDropify();	
 });
+
+function toolpit(){
+	$('[data-toggle="tooltip"]').tooltip();   
+}
 
 function showAnimation(){
   setTimeout(function() {
@@ -65,6 +76,46 @@ function aboutSlider(){
 	  	autoplaySpeed: 4000,
 		cssEase: 'linear'
 	});
+}
+
+function bootstrapWysihtml5(){
+	$(document).ready(function(){
+	    $('.wysihtml5').each(function(i, elem) {
+	      $(elem).wysihtml5({toolbar: {
+      'font-styles': true,
+      'color': false,
+      'emphasis': {
+        'small': true
+      },
+      'blockquote': true,
+      'lists': true,
+      'html': false,
+      'link': false,
+      'image': false,
+      'smallmodals': false
+    }});
+	    });
+  	})
+}
+
+function bootstrapWysihtml5Experience(){
+	$(document).ready(function(){
+	    $('.wysihtml5').each(function(i, elem) {
+	      $(elem).wysihtml5({toolbar: {
+      'font-styles': false,
+      'color': false,
+      'emphasis': {
+        'small': true
+      },
+      'blockquote': true,
+      'lists': true,
+      'html': false,
+      'link': false,
+      'image': false,
+      'smallmodals': false
+    }});
+	    });
+  	})
 }
 
 function homeSliderHeight(){
@@ -167,6 +218,18 @@ function serviceTabs(){
 	});
 }
 
+function imageWidthDropify(){
+	$('.dropify-wrapper').css('height', ($('.dropify-wrapper').outerWidth() * 1.335));
+}
+
+function adjustImageDropify(){
+	$(window).on('resize', function(){
+	   imageWidthDropify();
+	});
+}
+
+
+
 // AJAX RAILS FUNCTIONS
 
 function messages_create_js(){
@@ -181,4 +244,56 @@ function messages_create_js(){
 	$(".form-clear").val('');
 }
 
+function user_edit_js(){
+	$('.dropify').dropify();
+	imageWidthDropify();
+}
 
+function user_update_js(){
+	$('.dropify').dropify();
+	imageWidthDropify();
+}
+
+function education_cancel_js(){
+	toolpit();
+}
+
+function education_create_js(){
+	toolpit();
+}
+
+function education_update_js(){
+	toolpit();
+}
+
+function experience_cancel_js(){
+	toolpit();
+}
+
+function experience_create_js(){
+	toolpit();
+}
+
+function experience_update_js(){
+	toolpit();
+}
+
+function experience_new_js(){
+	bootstrapWysihtml5Experience();
+}
+
+function experience_edit_js(){
+	bootstrapWysihtml5Experience();
+}
+
+function skill_cancel_js(){
+	toolpit();
+}
+
+function skill_create_js(){
+	toolpit();
+}
+
+function skill_update_js(){
+	toolpit();
+}

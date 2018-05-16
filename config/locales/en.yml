@@ -38,9 +38,50 @@ en:
   index:
     home:
       read_more: "Read more"
+  users:
+    header_user:
+      name_surname: "Name & Surname"
+      headline: "Position"
+      short_description: "Cover letter"
+      phone_number: "Phone number"
+      birth_date: "Age"
+      age: "years old"
+      follow_me: "Follow me"
+  educations:
+    index:
+      not_completed: "Not completed"
+      add: "Add Education"
+      edit: "Edit Education"
+      delete: "Delete Education"
+    form:
+      select_year: "Select year"
+  experiences:
+    index:
+      current: "Current"
+      add: "Add Experience"
+      edit: "Edit Experience"
+      delete: "Delete Experience"
+    form:
+      select_year: "Select year"
+  skills:
+    index:
+      add: "Add Skill"
+      edit: "Edit Skill"
+      delete: "Delete Skill"
+  activerecord:
+    attributes:
+      user:
+        short_description: "Cover letter"
   errors:
     messages:
       not_blank: "can't be blank"
       incorrect_format: "has a format not allowed"
       exceeds_size: "size must be in between 0 Bytes and 3 MB"
+      not_unique: "has already been taken"
+      only_number: "only allows numbers"
       save_prohibited: "prohibited this %{model} from being saved:"
+      incorrect_year: "is not a valid year"
+      incorrect_percentage: "is not a valid percentage"
+      start_date_greater: "must be equal or greater than start date"
+      max_skills_reached: "You have reached the maximun of posible skills, you cannot include more skills"
+

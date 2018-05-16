@@ -16,9 +16,30 @@
 	</div>
 </div>
 
-<div class="section-wrapper">
-	<div class="container">
-	  	<div class="col-lg-12">
+
+<div class="container">
+	<div class="col-lg-12">
+		<div class="wrapper">
+			<div class="header-wrapper">
+				<span>LATEST</span>
+				<h2>Recent Jobs</h2>
+			</div>
+			<%= render :partial => 'jobs/table' %>
+		</div>
+	</div>
+</div>
+<div class="parallax-home parallax-wrapper">
+	<div class="parallax">
+		<div class="overlay-parallax"></div>
+		<div class="info-parallax">
+			<h1>Registrate y crea tu CV</h1>
+			<%= link_to "Create account", new_user_registration_path, :class => 'btn btn-primary btn-blue' %>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="col-lg-12">
+		<div class="wrapper">
 			<div class="header-wrapper">
 				<span>Categories</span>
 				<h2>Popular categories</h2>

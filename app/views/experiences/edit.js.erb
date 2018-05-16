@@ -1,0 +1,12 @@
+// Delete new form
+$('#render-experience-new').html("")
+// Render add link in case new form was deleted
+$('.add-experience-link').css('display','block');
+// Delete all edit forms
+$('.render-experience-edit').html("");
+// Render edit form below element
+$('.edit-experience-link').bind('ajax:success', function(event) {
+	$(this).closest('div[class^="experience-block"]').next().html("<%= j (render :template => 'experiences/edit.html') %>");
+	experience_edit_js();
+	event.stopImmediatePropagation();
+});

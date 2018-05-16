@@ -1,0 +1,91 @@
+<div class="col-lg-4 photo-wrapper">
+  <% if @user.photo? %>
+    <%= image_tag @user.photo(:normal) %> 
+  <% else %>
+    <%= image_tag 'user_image_default.png' %> 
+  <% end %>        
+</div>
+
+  <div class="edit-profile">
+    <%= link_to edit_user_path(@user), :remote => true do %>
+      <i class="fa fa-cog" data-toggle="tooltip" data-placement="bottom" title="Edit Profile"></i>
+    <% end %>
+  </div>
+
+<div class="col-lg-8 user-details-wrapper">
+  <% if @user.name? && @user.surname? %>
+    <h1><%= @user.name %> <%= @user.surname %></h1>
+  <% else %>
+    <h1><%= t('.name_surname') %></h1>
+  <% end %>
+
+  <% if @user.headline? %>
+    <h3><%= @user.headline %></h3>
+  <% else %>
+    <h3><%= t('.headline') %></h3>
+  <% end %>
+
+  <hr>
+
+  <% if @user.headline? %>
+    <p><%= @user.short_description %></p>
+  <% else %>
+    <p><%= t('.short_description') %></p>
+  <% end %>
+
+  <hr>
+  <ul class="user-details">
+    <li class="col-lg-6 no-padding">
+      <i class="fa fa-envelope"></i>
+      <span><%= @user.email %></span>
+    </li>
+
+    <li class="col-lg-6 no-padding">
+      <i class="fa fa-phone"></i>
+      <% if @user.phone_number? %>
+        <span><%= @user.phone_number %></span>
+      <% else %>
+        <span><%= t('.phone_number') %></span>
+      <% end %>
+    </li>
+
+    <li class="col-lg-6 no-padding">
+      <i class="fa fa-birthday-cake"></i>
+      <% if @user.birth_date? %>
+        <span><%= @user.calculate_age %> <%= t('.age') %></span>
+      <% else %>
+        <span><%= t('.birth_date') %></span>
+      <% end %>
+    </li>
+  </ul>
+</div>
+<div class="user-button-group">
+  <ul class="social-information">
+    <% if @user.facebook? || @user.google_plus? || @user.twitter? || @user.instagram? || @user.pinterest? || @user.youtube? %>
+      <li class="title"><%= t('.follow_me') %></li>
+    <% end %>
+    <% if @user.facebook? %>
+      <li><a href="<%= @user.facebook %>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+    <% end %>
+    <% if @user.google_plus? %>
+      <li><a href="<%= @user.google_plus %>" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+    <% end %>
+    <% if @user.twitter? %>
+      <li><a href="<%= @user.twitter %>" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    <% end %>
+    <% if @user.instagram? %>
+      <li><a href="<%= @user.instagram %>" target="_blank"><i class="fa fa-instagram"></i></a></li>
+    <% end %>
+    <% if @user.pinterest? %>
+      <li><a href="<%= @user.pinterest %>" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+    <% end %>
+    <% if @user.youtube? %>
+      <li><a href="<%= @user.youtube %>" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    <% end %>
+  </ul>
+
+  <div class="action-buttons-right">
+    <!--<a class="btn btn-primary btn-blue" href="#">Download CV</a>
+    <a class="btn btn-success btn-green" href="job-apply.html">Contact me</a>-->
+  </div>
+</div>

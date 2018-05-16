@@ -1,0 +1,27 @@
+<% @jobs.each do |job| %>
+  <div class="job-header">
+    <i class="fa <%= job.industry.icon %> icon-industry" aria-hidden="true"></i>
+    <div class="job-header-main">
+      <h4><%= link_to job.job_title, job_path(job) %></h4>
+      <h5><%= job.industry.title %></h5>
+    </div>
+    <div class="job-header-details">
+      <span class="location"><i class="fa fa-map-marker" aria-hidden="true"></i><%= job.province %>, <%= job.other_signs %></span>
+      <span class="label label-success employment"><%= job.employment.title %></span>
+    </div>
+    <% if current_user && current_user.admin %>
+      <div class="job-links">
+        <%= link_to t('.show', :default => t("helpers.links.show")),
+                        job_path(job), :class => 'btn btn-default btn-xs' %>
+            <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                        edit_job_path(job), :class => 'btn btn-default btn-xs' %>
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                        job_path(job),
+                        :method => :delete,
+                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                        :class => 'btn btn-xs btn-danger' %>
+      </div>
+    <% end %>
+
+  </div>
+<% end %>

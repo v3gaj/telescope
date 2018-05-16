@@ -1,0 +1,6 @@
+$('.head-user').html("<%= j (render :partial => 'users/form_header.html') %>")
+user_edit_js();
+<% if @user.photo? %>
+	$('.dropify-render').html("<%= j (image_tag @user.photo(:normal)) %>")
+	$('.dropify-preview').css('display', 'block')
+<% end %>

@@ -11,6 +11,7 @@ es:
       cancel: "Cancelar"
       confirm: "Estas seguro?"
       destroy: "Eliminar"
+      destroy_account: "Eliminar Cuenta"
       new: "Nuevo"
       edit: "Editar"
       show: "Mostrar"
@@ -19,5 +20,7 @@ es:
     titles:
       edit: "Editar %{model}"
       save: "Guardar %{model}"
-      new: "Nuevo %{model}"
+      new:
+        male: "Nuevo %{model}"
+        female: "Nueva %{model}"
       delete: "Eliminar %{model}"

@@ -1,0 +1,6 @@
+<% if @skill.errors.any? %>
+  $('#render-skill-errors').html("<%= j (render :partial =>'skills/errors') %>");
+<% else %>
+	$('#render-user-skill').html("<%= j (render :template => 'skills/index') %>");
+	skill_create_js();
+<% end %>

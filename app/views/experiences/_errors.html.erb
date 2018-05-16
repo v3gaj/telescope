@@ -1,0 +1,15 @@
+<%- model_class = Experience -%>
+<% if @experience.errors.any? %>
+  <div id="error_expl" class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= pluralize(@experience.errors.count, "error")%> <%= t 'errors.messages.save_prohibited', :model => model_class.model_name.human.titleize %></h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+      <% @experience.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

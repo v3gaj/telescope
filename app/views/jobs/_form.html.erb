@@ -1,0 +1,85 @@
+<%- model_class = Job -%>
+<%= form_for @job, :html => { :class => "form-horizontal job" } do |f| %>
+
+  <% if @job.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@job.errors.count, "error")%> <%= t 'errors.messages.save_prohibited', :model => model_class.model_name.human.titleize %></h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @job.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :job_title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :job_title, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:job_title) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :job_description, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_area :job_description, :class => 'form-control wysihtml5', rows: 16 %>
+    </div>
+    <%=f.error_span(:job_description) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :language_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :language_id, options_for_select(@languajes.map{|p|[p.title, p.id]}, :selected => f.object.language_id), { :include_blank => "" }, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:language_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :industry_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :industry_id, options_for_select(@industries.map{|p|[p.title, p.id]}, :selected => f.object.industry_id), { :include_blank => "" }, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:industry_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :employment_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :employment_id, options_for_select(@employments.map{|p|[p.title, p.id]}, :selected => f.object.employment_id), { :include_blank => "" }, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:employment_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :schedule_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :schedule_id, options_for_select(@schedules.map{|p|[p.title, p.id]}, :selected => f.object.schedule_id), { :include_blank => "" }, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:schedule_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :province, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :province, options_for_select([ "San Jose", "Heredia", "Alajuela", "Cartago", "Puntarenas", "Limón", "Guanacaste"], :selected => f.object.province), { :include_blank => "" }, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:province) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :other_signs, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :other_signs, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:other_signs) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit(@job.new_record? ? t('.create', :default => t("helpers.links.create")) : 
+                                      t('.update', :default => t("helpers.links.update")), class: 'btn btn-primary') %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                jobs_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

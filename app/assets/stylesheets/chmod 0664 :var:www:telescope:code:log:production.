@@ -1,0 +1,57 @@
+chmod 0664 /var/www/telescope/code/log/production.log
+
+
+
+
+
+
+
+
+
+/var/www/telescope/code/public
+
+
+
+brew install yarn
+
+
+userdel telescope
+userdel [options] telescope
+userdel -r telescope
+
+
+RUBY_CONFIGURE_OPTS="--disable-install-doc" rbenv install 2.5.0
+
+
+
+#needed for ruby verion to execute
+
+Gem install bundler 
+
+
+
+service apache2 restart
+
+
+
+sudo chmod -R 777 /var/www/telescope/code/tmp/cache/assets
+
+ 
+
+sudo chmod -R 777 /var/www/telescope/code/public
+
+
+
+f.select_year(Date.today, :start_year => Time.now.year, :end_year => Time.now.year - 95, :field_name => 'grad_year')
+
+
+ validates :phone,   :presence => {:message => 'hello world, bad operation!'},
+                     :numericality => true,
+                     :length => { :minimum => 10, :maximum => 15 }
+
+
+<input type="color" id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" value="#ff0000" style="width:85%;">
+
+select_tag "sizes", options_for_select((4..15).step(0.5))
+
+("a".."z").include?("g")   #=> true

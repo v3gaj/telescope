@@ -1,0 +1,6 @@
+// Delete add link
+$('.add-skill-link').css('display','none');
+// Delete all edit forms
+$('.render-skill-edit').html("");
+// Render new form
+$('#render-skill-new').html("<%= j (render :template => 'skills/new.html') %>")

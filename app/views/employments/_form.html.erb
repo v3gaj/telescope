@@ -1,0 +1,42 @@
+<%- model_class = Employment -%>
+<%= form_for @employment, :html => { :class => "form-horizontal employment" } do |f| %>
+
+  <% if @employment.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@employment.errors.count, "error")%> <%= t 'errors.messages.save_prohibited', :model => model_class.model_name.human.titleize %></h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @employment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:title) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :not_available, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.check_box :not_available, :class => 'check-box' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit(@employment.new_record? ? t('.create', :default => t("helpers.links.create")) : 
+                                      t('.update', :default => t("helpers.links.update")), class: 'btn btn-primary') %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                employments_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

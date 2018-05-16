@@ -1,0 +1,42 @@
+<div class="col-xs-12">
+  <!-- ADD LINK -->
+  <div class="add-experience-link">
+      <%= link_to t('.add'), new_user_experience_path(@user), :remote => true, :class => 'btn btn-primary btn-blue' %>
+  </div>
+  <!-- RENDER CREATION FORM -->
+  <div id="render-experience-new"></div>
+  <% @experiences.each do |experience| %>
+    <div class="experience-block">
+      <!-- DELETE LINK -->
+      <div class="delete-experience">
+        <%= link_to user_experience_path(@user, experience), :method => 'delete', :remote => true, 
+                                :class => 'btn btn-danger delete-experience-link', 
+                                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :toggle => "tooltip", :placement => "bottom"}, 
+                                :title => t('.delete') do %>
+          <i class="fa fa-times"></i>
+        <% end %>
+      </div>
+      <!-- EDIT LINK -->
+      <div class="edit-experience">
+        <%= link_to edit_user_experience_path(@user, experience), :remote => true, :class => 'btn btn-primary edit-experience-link',
+                                :data => { :toggle => "tooltip", :placement => "bottom"}, 
+                                :title => t('.edit') do %>
+          <i class="fa fa-pencil"></i>
+        <% end %>
+      </div>
+      <div class="experience-header">
+        <i class="fa fa-cubes" aria-hidden="true"></i>
+        <div class="header-group">
+          <h4><%= experience.company %></h4>
+          <h5><%= experience.position %></h5>
+        </div>
+        <h6 class="time"><%= experience.start_date %> - <% if experience.end_date == "9999" %><%= t('.current') %><% else %><%= experience.end_date %><% end %></h6>
+      </div>
+      <div class="experience-body">
+        <p><%= experience.achievements.html_safe %></p>
+      </div>
+    </div>
+    <!-- RENDER EDIT FORM -->
+    <div class="render-experience-edit"></div>
+  <% end %>
+</div>

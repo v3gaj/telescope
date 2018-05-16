@@ -1,6 +1,7 @@
 class IndexController < ApplicationController
   def home
   	@slides = Slide.all
+    @jobs = Job.all.order(created_at: :desc).limit(10)
   end
 
   def services

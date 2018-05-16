@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job_title: MyString
+  job_description: MyText
+  requirements: MyText
+  preferred: MyText
+  language: one
+  industry: one
+  employment: one
+  schedule: one
+  province: MyString
+  other_signs: MyString
+
+two:
+  job_title: MyString
+  job_description: MyText
+  requirements: MyText
+  preferred: MyText
+  language: two
+  industry: two
+  employment: two
+  schedule: two
+  province: MyString
+  other_signs: MyString

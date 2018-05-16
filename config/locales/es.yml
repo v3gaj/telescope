@@ -38,18 +38,112 @@ es:
   index:
     home:
       read_more: "Ver mas"
+  users:
+    header_user:
+      name_surname: "Nombre & Apellido"
+      headline: "Profesión"
+      short_description: "Carta de presentación"
+      phone_number: "Número de teléfono"
+      birth_date: "Edad"
+      age: "años"
+      follow_me: "Sígueme en"
+  educations:
+    index:
+      not_completed: "Incompleto"
+      add: "Agregar Educación"
+      edit: "Editar Educación"
+      delete: "Eliminar Educación"
+    form:
+      select_year: "Seleccione el año"
+      grade: "Grado de Estudio"
+  experiences:
+    index:
+      current: "Actual"
+      add: "Agregar Experiencia"
+      edit: "Editar Experiencia"
+      delete: "Eliminar Experiencia"
+    form:
+      select_year: "Seleccione el año"
+  skills:
+    index:
+      add: "Agregar Habilidad"
+      edit: "Editar Habilidad"
+      delete: "Eliminar Habilidad"
   activerecord:
     attributes:
       slide:
         title: "Título"
         subtitle: "Subtítulo"
         background: "Fondo"
+      language:
+        title: "Título"
+        not_available: "No disponible"
+      schedule:
+        title: "Título"
+        not_available: "No disponible"
+      industry:
+        title: "Título"
+        icon: "Icono"
+        not_available: "No disponible"
+      employment:
+        title: "Título"
+        not_available: "No disponible"
+      job:
+        job_title: "Título"
+        job_description: "Descripción"
+        requirements: "Requerimientos"
+        preferred: "Preferido"
+        province: "Provincia"
+        other_signs: "Otras señales"
+        language_id: "Lenguaje"
+        schedule_id: "Horario"
+        industry_id: "Industria"
+        employment_id: "Empleo"
+      degree: 
+        title: "Título"
+      education:
+        degree: "Grado"
+        study_field: "Campo de Estudio"
+        institution: "Institución"
+        start_date: "Fecha de Inicio"
+        end_date: "Fecha de Finalización"
+      experience:
+        company: "Compañia"
+        position: "Posición"
+        start_date: "Fecha de Inicio"
+        end_date: "Fecha de Finalización"
+        achievements: "Logros"
+      user:
+        name: "Nombre"
+        surname: "Apellido"
+        headline: "Profesión"
+        short_description: "Carta de presentación"
+      skill:
+        skill: "Habilidad"
+        knowledge_percentage: "Porcentaje de conocimiento"
     models:
       slide: "Slide"
+      language: "Lenguaje"
+      schedule: "Horario"
+      industry: "Industria"
+      employment: "Empleo"
+      job: "Posición"
+      degree: "Grado"
+      education: "Estudio"
+      experience: "Experiencia"
+      skill: "Habilidad"
   errors:
     messages:
       not_blank: "debe ser completado"
       incorrect_format: "tiene un formato no permitido"
       exceeds_size: "debe tener un tamaño de entre 0 Bytes y 3 MB"
+      not_unique: "ya existe"
       save_prohibited: "no permiten guardar este %{model}:"
- 
+      only_number: "solo permite números"
+      required: "debe ser completado"
+      incorrect_year: "no es un año válido"
+      incorrect_percentage: "no es un porcentaje válido"
+      start_date_greater: "debe ser mayor que la fecha de inicio"
+      max_skills_reached: "Has alcanzado el maximo de habilidades posibles, ya no puedes incluir mas."
+
+

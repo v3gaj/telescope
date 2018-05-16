@@ -18,10 +18,10 @@
   <body>
 
     <%= render 'layouts/header' %>
-    <% if !(params[:controller] == 'index' && params[:action] == 'home') %>
-        <div class="header-background animation-wrapper"></div>
-    <% end %>
     <div class="animation-wrapper">
+      <% if !(params[:controller] == 'index' && params[:action] == 'home') %>
+        <div class="header-background animation-wrapper"></div>
+      <% end %>
       <div class="container">
         <div class="col-lg-12 alert-max-width">
             <%= bootstrap_flash %>

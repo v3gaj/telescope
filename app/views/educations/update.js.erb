@@ -1,0 +1,6 @@
+<% if @education.errors.any? %>
+  $('#render-education-errors').html("<%= j (render :partial =>'educations/errors') %>");
+<% else %>
+	$('#render-user-education').html("<%= j (render :template => 'educations/index') %>");
+	education_update_js();
+<% end %>

@@ -1,0 +1,7 @@
+// Delete add link
+$('.add-experience-link').css('display','none');
+// Delete all edit forms
+$('.render-experience-edit').html("");
+// Render new form
+$('#render-experience-new').html("<%= j (render :template => 'experiences/new.html') %>")
+experience_new_js();

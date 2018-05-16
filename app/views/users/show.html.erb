@@ -1,0 +1,82 @@
+<div class="job-background header-active"></div>
+<div class="container">
+  <div class="col-lg-12">
+    <%- model_class = User -%>
+    <div class="page-head head-user">
+      <%= render :partial => 'header_user' %>
+    </div>
+
+    <div class="wrapper">
+      <div class="header-wrapper">
+        <span>Latest Degrees</span>
+        <h2>Education</h2>
+      </div>
+      <div id="render-user-education">
+        <%= render :template => 'educations/index' %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="white-background">
+  <div class="container">
+    <div class="col-lg-12">
+      <div class="wrapper">
+        <div class="header-wrapper">
+          <span>Past Positions</span>
+          <h2>Work Experience</h2>
+        </div>
+        <div id="render-user-experience">
+          <%= render :template => 'experiences/index' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="col-lg-12">
+    <div class="wrapper">
+      <div class="header-wrapper">
+        <span>Expertise Areas</span>
+        <h2>Languages</h2>
+      </div>
+      <div class="user-languages">
+        <ul>
+          <li class="col-lg-12">
+            <div>
+              <span class="language-name">HTML</span>
+              <span class="language-value">100%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" style="width: 100%;"></div>
+            </div>
+          </li>
+
+          <li class="col-lg-12">
+            <div>
+              <span class="language-name">CSS</span>
+              <span class="language-value">95%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" style="width: 95%;"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="white-background">
+  <div class="container">
+    <div class="col-lg-12">
+      <div class="wrapper">
+        <div class="header-wrapper">
+          <span>Expertise Areas</span>
+          <h2>Skills</h2>
+        </div>
+        <div id="render-user-skill">
+          <%= render :template => 'skills/index' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,7 +10,148 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_28_163047) do
+ActiveRecord::Schema.define(version: 2018_05_16_002155) do
+
+  create_table "degree_translations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "degree_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["degree_id"], name: "index_degree_translations_on_degree_id"
+    t.index ["locale"], name: "index_degree_translations_on_locale"
+  end
+
+  create_table "degrees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "not_available"
+  end
+
+  create_table "educations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "degree_id"
+    t.string "study_field"
+    t.string "institution"
+    t.string "start_date"
+    t.string "end_date"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["degree_id"], name: "index_educations_on_degree_id"
+    t.index ["user_id"], name: "index_educations_on_user_id"
+  end
+
+  create_table "employment_translations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "employment_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["employment_id"], name: "index_employment_translations_on_employment_id"
+    t.index ["locale"], name: "index_employment_translations_on_locale"
+  end
+
+  create_table "employments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.boolean "not_available"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "experiences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "company"
+    t.string "position"
+    t.string "start_date"
+    t.string "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.text "achievements"
+    t.index ["user_id"], name: "index_experiences_on_user_id"
+  end
+
+  create_table "industries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.boolean "not_available"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "icon"
+  end
+
+  create_table "industry_translations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "industry_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["industry_id"], name: "index_industry_translations_on_industry_id"
+    t.index ["locale"], name: "index_industry_translations_on_locale"
+  end
+
+  create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "job_title"
+    t.text "job_description"
+    t.text "requirements"
+    t.text "preferred"
+    t.bigint "language_id"
+    t.bigint "industry_id"
+    t.bigint "employment_id"
+    t.bigint "schedule_id"
+    t.string "province"
+    t.string "other_signs"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employment_id"], name: "index_jobs_on_employment_id"
+    t.index ["industry_id"], name: "index_jobs_on_industry_id"
+    t.index ["language_id"], name: "index_jobs_on_language_id"
+    t.index ["schedule_id"], name: "index_jobs_on_schedule_id"
+  end
+
+  create_table "language_translations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "language_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["language_id"], name: "index_language_translations_on_language_id"
+    t.index ["locale"], name: "index_language_translations_on_locale"
+  end
+
+  create_table "languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "not_available"
+  end
+
+  create_table "schedule_translations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "schedule_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["locale"], name: "index_schedule_translations_on_locale"
+    t.index ["schedule_id"], name: "index_schedule_translations_on_schedule_id"
+  end
+
+  create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.boolean "not_available"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "skill"
+    t.integer "knowledge_percentage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_skills_on_user_id"
+  end
 
   create_table "slide_translations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "slide_id", null: false
@@ -52,8 +193,33 @@ ActiveRecord::Schema.define(version: 2018_04_28_163047) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
+    t.string "headline"
+    t.text "short_description"
+    t.string "phone_number"
+    t.datetime "birth_date"
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string "name"
+    t.string "surname"
+    t.string "facebook"
+    t.string "google_plus"
+    t.string "twitter"
+    t.string "instagram"
+    t.string "pinterest"
+    t.string "youtube"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "educations", "degrees"
+  add_foreign_key "educations", "users"
+  add_foreign_key "experiences", "users"
+  add_foreign_key "jobs", "employments"
+  add_foreign_key "jobs", "industries"
+  add_foreign_key "jobs", "languages"
+  add_foreign_key "jobs", "schedules"
+  add_foreign_key "skills", "users"
 end

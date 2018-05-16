@@ -1,0 +1,6 @@
+<% if @experience.errors.any? %>
+  $('#render-experience-errors').html("<%= j (render :partial =>'experiences/errors') %>");
+<% else %>
+	$('#render-user-experience').html("<%= j (render :template => 'experiences/index') %>");
+	experience_update_js();
+<% end %>

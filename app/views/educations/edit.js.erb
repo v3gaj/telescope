@@ -1,0 +1,11 @@
+// Delete new form
+$('#render-education-new').html("")
+// Render add link in case new form was deleted
+$('.add-education-link').css('display','block');
+// Delete all edit forms
+$('.render-education-edit').html("");
+// Render edit form below element
+$('.edit-education-link').bind('ajax:success', function(event) {
+	$(this).closest('div[class^="education-block"]').next().html("<%= j (render :template => 'educations/edit.html') %>");
+	event.stopImmediatePropagation();
+});

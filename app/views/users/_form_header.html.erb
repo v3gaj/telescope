@@ -1,0 +1,110 @@
+<%- model_class = User -%>
+<%= form_for @user, :html => { :class => "form-horizontal user" }, :remote => true do |f| %>
+
+  <% if @user.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@user.errors.count, "error")%> <%= t 'errors.messages.save_prohibited', :model => model_class.model_name.human.titleize %></h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="col-lg-4 photo-wrapper">
+    <div class="form-group">
+      <div class="col-lg-12">
+        <%= f.file_field :photo, :class => 'form-control dropify' %>
+      </div>
+    </div>          
+  </div>
+ 
+  <div class="col-lg-8 no-padding form-user-wrapper">
+    <div class="col-lg-6 header-input-wrapper">
+      <%= f.text_field :name, :placeholder => true, :class => 'form-user-header form-h1' %>
+    </div>
+    <div class="col-lg-6 header-input-wrapper">
+      <%= f.text_field :surname, :placeholder => true, :class => 'form-user-header form-h1' %>
+    </div>
+    <div class="col-lg-12 header-input-wrapper">
+      <%= f.text_field :headline, :placeholder => true, :class => 'form-user-header form-h3' %>
+    </div>
+    <div class="col-lg-12 form-user-description header-input-wrapper">
+      <%= f.text_area :short_description, :placeholder => true, :class => 'form-user-header form-p', :rows => 5 %>
+    </div>
+    <div class="user-form-hr">
+      <hr>
+    </div> 
+    <div class="col-lg-12 user-birth-date header-input-wrapper">
+      <%= f.label :birth_date, :class => 'control-label' %>
+      <%= f.date_select :birth_date, :class => 'form-user-header', :start_year => 1950, :end_year => Time.now.year %>
+    </div>
+    <div class="col-lg-12 user-phone-number">
+      <%= f.label :phone_number, :class => 'control-label' %>
+      <div class="col-lg-6 header-input-wrapper">
+        <%= f.telephone_field :phone_number, :class => 'form-user-header' %>
+      </div>
+    </div>
+    <div class="user-form-hr">
+      <hr>
+    </div>
+    <div class="col-lg-6 header-input-wrapper">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-facebook"></i></span>
+        <%= f.text_field :facebook, :class => 'form-user-header', :placeholder => 'Facebook' %>
+      </div>
+    </div>
+    <div class="col-lg-6 header-input-wrapper">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-google-plus"></i></span>
+        <%= f.text_field :google_plus, :class => 'form-user-header', :placeholder => 'Google Plus' %>
+      </div>
+    </div>
+    <div class="col-lg-6 header-input-wrapper">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-twitter"></i></span>
+        <%= f.text_field :twitter, :class => 'form-user-header', :placeholder => 'Twitter' %>
+      </div>
+    </div>
+    <div class="col-lg-6 header-input-wrapper">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-instagram"></i></span>
+        <%= f.text_field :instagram, :class => 'form-user-header', :placeholder => 'Instagram' %>
+      </div>
+    </div>
+    <div class="col-lg-6 header-input-wrapper">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-pinterest"></i></span>
+        <%= f.text_field :pinterest, :class => 'form-user-header', :placeholder => 'Pinterest' %>
+      </div>
+    </div>
+    <div class="col-lg-6 header-input-wrapper">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-youtube"></i></span>
+        <%= f.text_field :youtube, :class => 'form-user-header', :placeholder => 'Youtube' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="user-button-group">
+    <div class="action-buttons-left">
+      <%= link_to t('.destroy', :default => t("helpers.links.destroy_account")),
+                    user_path(@user),
+                    :method => 'delete',
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'btn btn-danger btn-white' %>
+    </div>
+    <div class="action-buttons-right">
+      <%= f.submit(@user.new_record? ? t('.create', :default => t("helpers.links.create")) : 
+                                      t('.update', :default => t("helpers.links.update")), class: 'btn btn-primary btn-blue') %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                cancel_update_user_path(id: @user.id), :class => 'btn btn-default btn-white', :remote => true %>
+    </div>
+  </div>
+
+<% end %>

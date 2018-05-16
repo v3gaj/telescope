@@ -55,6 +55,7 @@ gem 'jquery-slick-rails'
 gem 'meta-tags'
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml'
+gem 'bootstrap-wysihtml5-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="col-lg-12">
+    <%- model_class = Job -%>
+    <div class="page-head">
+      <h1><%=t '.title', :default => model_class.model_name.human.pluralize(:es).titleize %></h1>
+    </div>
+    <div class="wrapper">
+
+      <%= render :partial => 'table' %>
+
+      <%= link_to t('.new', :default => t("helpers.links.new")),
+                  new_job_path,
+                  :class => 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

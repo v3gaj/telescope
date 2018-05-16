@@ -1,0 +1,11 @@
+// Delete new form
+$('#render-skill-new').html("")
+// Render add link in case new form was deleted
+$('.add-skill-link').css('display','block');
+// Delete all edit forms
+$('.render-skill-edit').html("");
+// Render edit form below element
+$('.edit-skill-link').bind('ajax:success', function(event) {
+	$(this).closest('div[class^="skill-block"]').next().html("<%= j (render :template => 'skills/edit.html') %>");
+	event.stopImmediatePropagation();
+});

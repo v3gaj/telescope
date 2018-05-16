@@ -1,0 +1,6 @@
+// Delete add link
+$('.add-education-link').css('display','none');
+// Delete all edit forms
+$('.render-education-edit').html("");
+// Render new form
+$('#render-education-new').html("<%= j (render :template => 'educations/new.html') %>")
