@@ -14,7 +14,7 @@ class User < ApplicationRecord
 	validates_attachment_size :photo, in: 0..3.megabytes, message: :exceeds_size
 	validates_attachment_content_type :photo, content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)$/, message: :incorrect_format
 	validates_numericality_of :phone_number, :only_integer => true, allow_blank: true, message: :only_number
-	before_save :capitalize_fields
+	before_update :capitalize_fields
 
 	# METHODS
 
