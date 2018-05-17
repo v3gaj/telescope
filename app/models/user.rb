@@ -19,8 +19,10 @@ class User < ApplicationRecord
 	# METHODS
 
 	def capitalize_fields
-	  self.name = self.name.titleize
-	  self.surname = self.surname.titleize
+		if self.name != nil && self.surname != nil
+			self.name = self.name.titleize
+	    self.surname = self.surname.titleize
+		end
 	end
 
 	def calculate_age
