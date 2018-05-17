@@ -94,15 +94,15 @@ Rails.application.configure do
 
   # CUSTOMS
 
-  config.action_mailer.asset_host = 'http://telescopehr.com'
+  config.action_mailer.asset_host = 'http://tripcustomizers.com'
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { host: 'telescopehr.com', protocol: 'http' }
+  config.action_mailer.default_url_options = { host: 'tripcustomizers.com', protocol: 'http' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: "gator4142.hostgator.com",
     port: 465,
-    domain: "telescopehr.com",
-    user_name: "webcontact@telescopehr.com",
+    domain: "tripcustomizers.com",
+    user_name: "webcontact@caffora.cafe",
     password: "Juan9173.",
     authentication: :plain,
     enable_starttls_auto: true,
