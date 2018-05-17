@@ -132,9 +132,9 @@ Dropify.prototype.createElements = function()
     var messageWrapper = $(this.settings.tpl.message).insertBefore(this.input);
     $(this.settings.tpl.errorLine).appendTo(messageWrapper);
 
-    if (this.isTouchDevice() === true) {
-        this.wrapper.addClass('touch-fallback');
-    }
+//    if (this.isTouchDevice() === true) {
+//        this.wrapper.addClass('touch-fallback');
+//    }
 
     if (this.input.attr('disabled')) {
         this.isDisabled = true;
