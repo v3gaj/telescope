@@ -17,6 +17,7 @@ Rails.application.configure do
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
+  config.read_encrypted_secrets = true
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
@@ -94,14 +95,14 @@ Rails.application.configure do
 
   # CUSTOMS
 
-  config.action_mailer.asset_host = 'http://tripcustomizers.com'
+  config.action_mailer.asset_host = 'http://telescopehr.com'
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { host: 'tripcustomizers.com', protocol: 'http' }
+  config.action_mailer.default_url_options = { host: 'telescopehr.com', protocol: 'http' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: "gator4142.hostgator.com",
     port: 465,
-    domain: "tripcustomizers.com",
+    domain: "telescopehr.com",
     user_name: "webcontact@caffora.cafe",
     password: "Juan9173.",
     authentication: :plain,
