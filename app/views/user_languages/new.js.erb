@@ -1,0 +1,6 @@
+// Delete add link
+$('.add-user_language-link').css('display','none');
+// Delete all edit forms
+$('.render-user_language-edit').html("");
+// Render new form
+$('#render-user_language-new').html("<%= j (render :template => 'user_languages/new.html') %>")

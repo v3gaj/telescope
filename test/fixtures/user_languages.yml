@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  language_level: one
+  language: one
+
+two:
+  user: two
+  language_level: two
+  language: two

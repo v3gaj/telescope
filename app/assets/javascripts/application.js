@@ -80,42 +80,42 @@ function aboutSlider(){
 
 function bootstrapWysihtml5(){
 	$(document).ready(function(){
-	    $('.wysihtml5').each(function(i, elem) {
-	      $(elem).wysihtml5({toolbar: {
-      'font-styles': true,
-      'color': false,
-      'emphasis': {
-        'small': true
-      },
-      'blockquote': true,
-      'lists': true,
-      'html': false,
-      'link': false,
-      'image': false,
-      'smallmodals': false
-    }});
-	    });
-  	})
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5({toolbar: {
+	      'font-styles': true,
+	      'color': false,
+	      'emphasis': {
+	        'small': true
+	      },
+	      'blockquote': true,
+	      'lists': true,
+	      'html': false,
+	      'link': false,
+	      'image': false,
+	      'smallmodals': false
+	    }});
+    });
+	})
 }
 
 function bootstrapWysihtml5Experience(){
 	$(document).ready(function(){
-	    $('.wysihtml5').each(function(i, elem) {
-	      $(elem).wysihtml5({toolbar: {
-      'font-styles': false,
-      'color': false,
-      'emphasis': {
-        'small': true
-      },
-      'blockquote': true,
-      'lists': true,
-      'html': false,
-      'link': false,
-      'image': false,
-      'smallmodals': false
-    }});
-	    });
-  	})
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5({toolbar: {
+	      'font-styles': false,
+	      'color': false,
+	      'emphasis': {
+	        'small': true
+	      },
+	      'blockquote': true,
+	      'lists': true,
+	      'html': false,
+	      'link': false,
+	      'image': false,
+	      'smallmodals': false
+	    }});
+    });
+	})
 }
 
 function homeSliderHeight(){
@@ -295,5 +295,18 @@ function skill_create_js(){
 }
 
 function skill_update_js(){
+	toolpit();
+}
+
+function user_language_cancel_js(){
+	toolpit();
+}
+
+function user_language_create_js(){
+	toolpit();
+}
+
+
+function user_language_update_js(){
 	toolpit();
 }

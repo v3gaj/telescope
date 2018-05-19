@@ -1,0 +1,42 @@
+<div class="col-xs-12">
+  <!-- ADD LINK -->
+  <% if User::user_content_allowed?(@user, current_user) %>
+    <div class="add-user_language-link">
+        <%= link_to t('.add'), new_user_user_language_path(@user), :remote => true, :class => 'btn btn-primary btn-blue' %>
+    </div>
+  <% end %>
+  <!-- RENDER CREATION FORM -->
+  <div id="render-user_language-new"></div>
+  <% @user_languages.each do |user_language| %>
+    <div class="user_language-block">
+      <!-- DELETE LINK -->
+      <% if User::user_content_allowed?(@user, current_user) %>
+        <div class="delete-user_language">
+          <%= link_to user_user_language_path(@user, user_language), :method => 'delete', :remote => true, 
+                                  :class => 'btn btn-danger delete-user_language-link', 
+                                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :toggle => "tooltip", :placement => "bottom"}, 
+                                  :title => t('.delete') do %>
+            <i class="fa fa-times"></i>
+          <% end %>
+        </div>
+        <!-- EDIT LINK -->
+        <div class="edit-user_language">
+          <%= link_to edit_user_user_language_path(@user, user_language), :remote => true, :class => 'btn btn-primary edit-user_language-link',
+                                  :data => { :toggle => "tooltip", :placement => "bottom"}, 
+                                  :title => t('.edit') do %>
+            <i class="fa fa-pencil"></i>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="user_language-header">
+        <i class="fa fa-language" aria-hidden="true"></i>
+        <div class="header-group">
+          <h4><%= user_language.language.title %></h4>
+          <h5><%= user_language.language_level.title %></h5>
+        </div>
+      </div>
+    </div>
+    <!-- RENDER EDIT FORM -->
+    <div class="render-user_language-edit"></div>
+  <% end %>
+</div>

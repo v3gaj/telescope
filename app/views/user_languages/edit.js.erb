@@ -1,0 +1,11 @@
+// Delete new form
+$('#render-user_language-new').html("")
+// Render add link in case new form was deleted
+$('.add-user_language-link').css('display','block');
+// Delete all edit forms
+$('.render-user_language-edit').html("");
+// Render edit form below element
+$('.edit-user_language-link').bind('ajax:success', function(event) {
+	$(this).closest('div[class^="user_language-block"]').next().html("<%= j (render :template => 'user_languages/edit.html') %>");
+	event.stopImmediatePropagation();
+});

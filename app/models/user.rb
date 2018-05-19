@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :educations, :dependent => :destroy
   has_many :experiences, :dependent => :destroy
   has_many :skills, :dependent => :destroy
+  has_many :user_languages, :dependent => :destroy
 
   # VALIDATIONS
 
@@ -28,5 +29,9 @@ class User < ApplicationRecord
 	def calculate_age
 	  now = Time.now.utc.to_date
 	  return now.year - birth_date.year - ((now.month > birth_date.month || (now.month == birth_date.month && now.day >= birth_date.day)) ? 0 : 1)
+	end
+
+	def self.user_content_allowed?(user, current_user)
+		user == current_user ? true : false
 	end
 end

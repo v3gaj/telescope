@@ -6,11 +6,13 @@
   <% end %>        
 </div>
 
+<% if User::user_content_allowed?(@user, current_user) %>
   <div class="edit-profile">
     <%= link_to edit_user_path(@user), :remote => true do %>
       <i class="fa fa-cog" data-toggle="tooltip" data-placement="bottom" title="Edit Profile"></i>
     <% end %>
   </div>
+<% end %>
 
 <div class="col-lg-8 user-details-wrapper">
   <% if @user.name? && @user.surname? %>

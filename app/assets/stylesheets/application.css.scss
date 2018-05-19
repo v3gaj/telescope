@@ -162,16 +162,16 @@ hr{
 
 .nav-bar{
 	position: absolute;
-    width: 100%;
+  width: 100%;
 	text-align: center;
 	margin-top: 20px;
 	font-family: Open Sans,sans-serif;
 	letter-spacing: 1px;
 	-webkit-transition: all 100ms linear;
-    -moz-transition: all 100ms linear;
-    -o-transition: all 100ms linear;
-    -ms-transition: all 100ms linear;
-    transition: all 100ms linear;
+  -moz-transition: all 100ms linear;
+  -o-transition: all 100ms linear;
+  -ms-transition: all 100ms linear;
+  transition: all 100ms linear;
 }
 
 .nav-bar-white{
@@ -180,10 +180,20 @@ hr{
 	top: -20px;
 	width: 100%;
 	-webkit-box-shadow: 0 5px 25px 0 rgba(0,0,0,.07);
-    box-shadow: 0 5px 25px 0 rgba(0,0,0,.07);
+  box-shadow: 0 5px 25px 0 rgba(0,0,0,.07);
 
-	a{
+	.nav-link{
 		color: #000 !important;
+	}
+
+	.nav-li{
+		a{
+			color: #000 !important;
+		}
+	}
+
+	.login-link{
+		color: #fff !important
 	}
 }
 
@@ -212,7 +222,7 @@ hr{
 
 .nav-center,
 .nav-right{
-	a{
+	.nav-link{
 	    font-weight: 500;
 	    opacity: 0.6;
 	    transition: opacity 0.3s ease-in-out;
@@ -226,7 +236,7 @@ hr{
 
 .active{
 	color: rgb(255, 255, 255) !important;
-    opacity: 1 !important;
+  opacity: 1 !important;
 }
 
 /************************************NAVIGATION***********************************/
@@ -397,6 +407,7 @@ hr{
 	height: 509px;
 }
 
+
 /************************************PAGE-HEADER***********************************/
 
 .page-head{
@@ -405,6 +416,7 @@ hr{
 	text-align: center;
 }
 
+.user_language-form-wrapper,
 .skill-form-wrapper,
 .experience-form-wrapper,
 .education-form-wrapper,
@@ -450,6 +462,7 @@ hr{
   }
 }
 
+.user_language-form-wrapper,
 .skill-form-wrapper,
 .experience-form-wrapper,
 .education-form-wrapper,
@@ -457,6 +470,7 @@ hr{
 	padding: 30px 15px 20px;
 }
 
+.user_language-form-wrapper,
 .skill-form-wrapper,
 .experience-form-wrapper,
 .education-form-wrapper{
@@ -629,6 +643,7 @@ hr{
 	 font-size: 16px;
 }
 
+.form-user_language,
 .form-skill,
 .form-experience,
 .form-education,
@@ -664,6 +679,22 @@ hr{
 	}
 }
 
+.wysihtml5-sandbox{
+	&:hover{
+		border-color: #29aafe !important;
+		-webkit-transition: all .3s linear 0s;
+		-khtml-transition: all .3s linear 0s;
+		-moz-transition: all .3s linear 0s;
+		-ms-transition: all .3s linear 0s;
+		-o-transition: all .3s linear 0s;
+	}
+
+	&:focus{
+		border-color: #29aafe !important;
+	}
+}
+
+.form-user_language,
 .form-skill,
 .form-experience,
 .form-education{
@@ -1020,7 +1051,8 @@ hr{
 /************************************ABOUT VALUES TRANSITION***********************************/
 
 .tcvpb_section_content{
-	overflow: auto;
+	display: inline-block;
+  width: 100%;
 }
 
 .tcvpb_metro_box{
@@ -1463,6 +1495,7 @@ footer{
   }
 }
 
+.user_language-button-group,
 .skill-button-group,
 .experience-button-group,
 .education-button-group,
@@ -1474,6 +1507,7 @@ footer{
   padding: 20px 30px;
   overflow: auto;
   clear: both;
+  min-height: 84px;
 
   .social-information{
   	float: left;
@@ -1533,6 +1567,7 @@ footer{
   text-align: justify;
 }
 
+.user_language-block,
 .experience-block,
 .education-block{
 	display: block;
@@ -1554,6 +1589,7 @@ footer{
   }
 }
 
+.user_language-header,
 .experience-header,
 .education-header{
 	padding: 20px 30px;
@@ -1711,6 +1747,7 @@ footer{
   }
 }
 
+.edit-user_language,
 .edit-skill,
 .edit-experience,
 .edit-education,
@@ -1727,6 +1764,7 @@ footer{
 	}
 }
 
+.edit-user_language,
 .edit-skill,
 .edit-experience,
 .edit-education{
@@ -1738,7 +1776,7 @@ footer{
 	top: -31px;
 }
 
-
+.edit-user_language-link,
 .edit-skill-link,
 .edit-experience-link,
 .edit-education-link{
@@ -1754,6 +1792,7 @@ footer{
 	padding-right: 0px;
 }
 
+.user_language-input-wrapper,
 .skill-input-wrapper,
 .experience-input-wrapper,
 .education-input-wrapper,
@@ -1794,6 +1833,7 @@ footer{
 	}
 }
 
+.user_language-input-wrapper,
 .skill-input-wrapper,
 .experience-input-wrapper,
 .education-input-wrapper{
@@ -1801,7 +1841,6 @@ footer{
 		width: 100%
 	}
 }
-
 .skill-input-wrapper,
 .experience-input-wrapper,
 .education-input-wrapper,
@@ -1890,6 +1929,7 @@ footer{
 
 /************************************DEGREE***********************************/
 
+.add-user_language-link,
 .add-skill-link,
 .add-experience-link,
 .add-education-link{
@@ -1907,6 +1947,7 @@ footer{
 	margin-bottom: 30px;
 }
 
+#render-user_language-errors,
 #render-skill-errors,
 #render-experience-errors,
 #render-education-errors{
@@ -1914,6 +1955,7 @@ footer{
 	padding-left: 15px;
 }
 
+.delete-user_language,
 .delete-skill,
 .delete-experience,
 .delete-education{
@@ -1926,6 +1968,7 @@ footer{
 	top: -20px;
 }
 
+.delete-user_language-link,
 .delete-skill-link,
 .delete-experience-link,
 .delete-education-link{
@@ -1937,9 +1980,42 @@ footer{
 	z-index: 100;
 }
 
+#render-user-user_language,
 #render-user-skill,
 #render-user-experience,
 #render-user-education{
 	display: inline-block;
 	width: 100%;
+}
+
+.register-link,
+.profile-link,
+.logout-link,
+.login-link{
+  padding-top: 8px !important;
+  margin-top: 8px !important;
+  height: 35px;
+  margin-right: 5px;
+}
+
+.login-link{
+  &:hover{
+  	background-color: #428bca !important;
+  	border-color: #357ebd !important;
+  }
+}
+
+.logout-link{
+  &:hover{
+  	background-color: #c9302c !important;
+    border-color: #ac2925 !important;
+  }
+}
+
+.register-link,
+.profile-link{
+	&:hover{
+		background-color: #449d44 !important;
+    border-color: #398439 !important;
+  }
 }

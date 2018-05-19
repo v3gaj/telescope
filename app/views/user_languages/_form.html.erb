@@ -1,0 +1,25 @@
+<%= form_for([@user, @user_language], :remote => true, :html => { :class => "form-horizontal user_language" }) do |f| %>
+
+  <div id="render-user_language-errors"></div>
+
+  <div class="col-lg-6 user_language-input-wrapper">
+    <%= f.select :language_id, options_for_select(@languages.map{|p|[p.title, p.id]}, :selected => f.object.language_id), 
+                :prompt => t('user_languages.form.language'), 
+                :class => 'form-control .form-user_language,' %>
+  </div>
+  <div class="col-lg-6 user_language-input-wrapper last-form-element">
+    <%= f.select :language_level_id, options_for_select(@language_levels.map{|p|[p.title, p.id]}, :selected => f.object.language_level_id), 
+                :prompt => t('user_languages.form.level'), 
+                :class => 'form-control .form-user_language,' %>
+  </div>
+
+  <div class=".skill-button-group,">
+    <div class="col-lg-12 action-buttons-center">
+      <%= f.submit(@user_language.new_record? ? t('.create', :default => t("helpers.links.create")) : 
+                                      t('.update', :default => t("helpers.links.update")), class: 'btn btn-primary btn-blue') %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                cancel_user_languages_path(user_id: @user.id), :class => 'btn btn-default btn-white', :remote => true %>
+    </div>
+  </div>
+
+<% end %>

@@ -68,6 +68,14 @@ en:
       add: "Add Skill"
       edit: "Edit Skill"
       delete: "Delete Skill"
+  user_languages:
+    index:
+      add: "Add Language"
+      edit: "Edit Lenguage"
+      delete: "Delete Language"
+    form:
+      language: "Select language"
+      level: "Select level"
   activerecord:
     attributes:
       user:

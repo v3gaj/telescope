@@ -1,13 +1,12 @@
 class EducationsController < ApplicationController
   before_action :set_education, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:edit, :new, :create, :update, :destroy, :cancel]
-  before_action :set_education_all, only: [:edit, :new, :create, :update, :destroy, :cancel]
+  before_action :set_education_all, only: [:index, :edit, :new, :create, :update, :destroy, :cancel]
   before_action :selects_form, only: [:new, :edit, :create, :update]
 
   # GET /educations
   # GET /educations.json
   def index
-    @educations = Education.all
   end
 
   # GET /educations/1

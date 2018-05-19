@@ -32,7 +32,6 @@
 	margin-top: 15px;
 }
 
-
 .navbar-default .navbar-nav>li>a {
     color: #fff;
 
@@ -64,17 +63,18 @@
 
 .alert{
 	position: fixed;
-	bottom: 20px;
-	left: 0;
-	z-index: 100;
-	width: 80%;
-	margin-left: 10%;
-	text-align: center;
-	color: #fff;
-	border-radius: 0;
-	font-family: Oswald,sans-serif;
-    font-size: 16px;
-    letter-spacing: 0.7px;
+  bottom: -20px;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  padding-right: 10%;
+  padding-left: 10%;
+  color: #fff;
+  border-radius: 0;
+  font-family: Oswald,sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.7px;
+  text-align: center;
 }
 
 .alert-danger{

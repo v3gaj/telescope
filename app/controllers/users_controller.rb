@@ -10,9 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @educations = Education::get_all_educations_from_user(@user)
-    @experiences = Experience::get_all_experiences_from_user(@user)
-    @skills = Skill::get_all_skills_from_user(@user)
+    get_relation_objects(@user)
   end
 
   # GET /users/new
@@ -77,10 +75,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def profile
+    @user = current_user
+    get_relation_objects(@user)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def get_relation_objects(user)
+      @educations = Education::get_all_educations_from_user(user)
+      @experiences = Experience::get_all_experiences_from_user(user)
+      @skills = Skill::get_all_skills_from_user(user)
+      @user_languages = UserLanguage::get_all_user_languages_from_user(user)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

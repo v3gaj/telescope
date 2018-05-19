@@ -1,12 +1,11 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:edit, :new, :create, :update, :destroy, :cancel]
-  before_action :set_experience_all, only: [:edit, :new, :create, :update, :destroy, :cancel]
+  before_action :set_experience_all, only: [:index, :edit, :new, :create, :update, :destroy, :cancel]
 
   # GET /experiences
   # GET /experiences.json
   def index
-    @experiences = Experience.all
   end
 
   # GET /experiences/1

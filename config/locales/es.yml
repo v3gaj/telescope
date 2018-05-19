@@ -35,6 +35,11 @@ es:
     services: "Servicios"
     about: "Nosotros"
     contact: "Contacto"
+  header:
+    login: "Ingresar"
+    logout: "Salir"
+    register: "Registrarse"
+    profile: "Perfil"
   index:
     home:
       read_more: "Ver mas"
@@ -69,6 +74,14 @@ es:
       add: "Agregar Habilidad"
       edit: "Editar Habilidad"
       delete: "Eliminar Habilidad"
+  user_languages:
+    index:
+      add: "Agregar Lenguaje"
+      edit: "Editar Lenguaje"
+      delete: "Eliminar Lenguaje"
+    form:
+      language: "Seleccione el lenguaje"
+      level: "Seleccione el nivel"
   activerecord:
     attributes:
       slide:
@@ -101,6 +114,7 @@ es:
         employment_id: "Empleo"
       degree: 
         title: "Título"
+        not_available: "No disponible"
       education:
         degree: "Grado"
         study_field: "Campo de Estudio"
@@ -121,6 +135,12 @@ es:
       skill:
         skill: "Habilidad"
         knowledge_percentage: "Porcentaje de conocimiento"
+      language_level:
+        title: "Título"
+        not_available: "No disponible"
+      user_languages:
+        language: "Lenguaje"
+        language_level: "Nivel de estudio"
     models:
       slide: "Slide"
       language: "Lenguaje"
@@ -132,6 +152,8 @@ es:
       education: "Estudio"
       experience: "Experiencia"
       skill: "Habilidad"
+      language_level: 'Nivel de Idioma'
+      user_languages: "Lenguaje"
   errors:
     messages:
       not_blank: "debe ser completado"

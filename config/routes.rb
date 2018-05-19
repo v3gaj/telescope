@@ -12,11 +12,13 @@ Rails.application.routes.draw do
 		resources :schedules, :except => [:show]
 		resources :industries, :except => [:show]
 		resources :employments, :except => [:show]
+		resources :language_levels, :except => [:show]
 		resources :jobs
 		resources :users do
 			resources :educations, :except => [:show]
 			resources :experiences, :except => [:show]
 			resources :skills, :except => [:show]
+			resources :user_languages, :except => [:show]
 		end
 		resources :degrees, :except => [:show]
 
@@ -35,6 +37,13 @@ Rails.application.routes.draw do
 		# Skill custom
 		get 'cancel_skills', to: 'skills#cancel'
 		post 'cancel_skills', to: 'skills#cancel'
+
+		# User languages custom
+		get 'cancel_user_languages', to: 'user_languages#cancel'
+		post 'cancel_user_languages', to: 'user_languages#cancel'
+
+		# User languages custom
+		get 'profile', to: 'users#profile'
 
   	# Message Mailer
   	post 'contact', to: 'messages#create'

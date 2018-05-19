@@ -1,6 +1,5 @@
-class Language < ApplicationRecord
+class LanguageLevel < ApplicationRecord
 
-	has_many :jobs, :dependent => :restrict_with_error
 	has_many :user_languages, :dependent => :restrict_with_error
 
 	# VALIDATIONS

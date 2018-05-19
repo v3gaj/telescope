@@ -1,0 +1,7 @@
+<%- model_class = Education -%>
+<div class="education-form-wrapper">
+	<div class="page-header">
+	  <h2><%=t '.title', :default => [:'helpers.titles.new.male', 'New %{model}'], :model => model_class.model_name.human.titleize %></h2>
+	</div>
+	<%= render :partial => 'form' %>
+</div>

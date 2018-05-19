@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_16_002155) do
+ActiveRecord::Schema.define(version: 2018_05_17_183715) do
 
   create_table "degree_translations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "degree_id", null: false
@@ -110,6 +110,23 @@ ActiveRecord::Schema.define(version: 2018_05_16_002155) do
     t.index ["schedule_id"], name: "index_jobs_on_schedule_id"
   end
 
+  create_table "language_level_translations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "language_level_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["language_level_id"], name: "index_language_level_translations_on_language_level_id"
+    t.index ["locale"], name: "index_language_level_translations_on_locale"
+  end
+
+  create_table "language_levels", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.boolean "not_available"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "language_translations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "language_id", null: false
     t.string "locale", null: false
@@ -176,6 +193,17 @@ ActiveRecord::Schema.define(version: 2018_05_16_002155) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "language_level_id"
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_user_languages_on_language_id"
+    t.index ["language_level_id"], name: "index_user_languages_on_language_level_id"
+    t.index ["user_id"], name: "index_user_languages_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -222,4 +250,7 @@ ActiveRecord::Schema.define(version: 2018_05_16_002155) do
   add_foreign_key "jobs", "languages"
   add_foreign_key "jobs", "schedules"
   add_foreign_key "skills", "users"
+  add_foreign_key "user_languages", "language_levels"
+  add_foreign_key "user_languages", "languages"
+  add_foreign_key "user_languages", "users"
 end

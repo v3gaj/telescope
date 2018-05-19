@@ -1,0 +1,6 @@
+<% if @user_language.errors.any? %>
+  $('#render-user_language-errors').html("<%= j (render :partial =>'user_languages/errors') %>");
+<% else %>
+	$('#render-user-user_language').html("<%= j (render :template => 'user_languages/index') %>");
+	user_language_update_js();
+<% end %>

@@ -1,29 +1,33 @@
 <div class="col-xs-12">
   <!-- ADD LINK -->
-  <div class="add-education-link">
-      <%= link_to t('.add'), new_user_education_path(@user), :remote => true, :class => 'btn btn-primary btn-blue' %>
-  </div>
+  <% if User::user_content_allowed?(@user, current_user) %>
+    <div class="add-education-link">
+        <%= link_to t('.add'), new_user_education_path(@user), :remote => true, :class => 'btn btn-primary btn-blue' %>
+    </div>
+  <% end %>
   <!-- RENDER CREATION FORM -->
   <div id="render-education-new"></div>
   <% @educations.each do |education| %>
     <div class="education-block">
       <!-- DELETE LINK -->
-      <div class="delete-education">
-        <%= link_to user_education_path(@user, education), :method => 'delete', :remote => true, 
-                                :class => 'btn btn-danger delete-education-link', 
-                                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :toggle => "tooltip", :placement => "bottom"}, 
-                                :title => t('.delete') do %>
-          <i class="fa fa-times"></i>
-        <% end %>
-      </div>
-      <!-- EDIT LINK -->
-      <div class="edit-education">
-        <%= link_to edit_user_education_path(@user, education), :remote => true, :class => 'btn btn-primary edit-education-link',
-                                :data => { :toggle => "tooltip", :placement => "bottom"}, 
-                                :title => t('.edit') do %>
-          <i class="fa fa-pencil"></i>
-        <% end %>
-      </div>
+      <% if User::user_content_allowed?(@user, current_user) %>
+        <div class="delete-education">
+          <%= link_to user_education_path(@user, education), :method => 'delete', :remote => true, 
+                                  :class => 'btn btn-danger delete-education-link', 
+                                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :toggle => "tooltip", :placement => "bottom"}, 
+                                  :title => t('.delete') do %>
+            <i class="fa fa-times"></i>
+          <% end %>
+        </div>
+        <!-- EDIT LINK -->
+        <div class="edit-education">
+          <%= link_to edit_user_education_path(@user, education), :remote => true, :class => 'btn btn-primary edit-education-link',
+                                  :data => { :toggle => "tooltip", :placement => "bottom"}, 
+                                  :title => t('.edit') do %>
+            <i class="fa fa-pencil"></i>
+          <% end %>
+        </div>
+      <% end %>
       <div class="education-header">
         <i class="fa fa-certificate" aria-hidden="true" style="color:<%= education.degree.color %>" ></i>
         <div class="header-group">
