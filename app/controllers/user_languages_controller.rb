@@ -36,6 +36,8 @@ class UserLanguagesController < ApplicationController
     @user_language.user_id = @user.id
     respond_to do |format|
       if @user_language.save
+        # User Validation Profile
+        @errors = User.validate_user_complete_errors(@user)
         format.html { redirect_to @user_language, notice: 'User language was successfully created.' }
         format.json { render :show, status: :created, location: @user_language }
         format.js   { render :layout => false }
@@ -67,6 +69,8 @@ class UserLanguagesController < ApplicationController
   # DELETE /user_languages/1.json
   def destroy
     @user_language.destroy
+    # User Validation Profile
+    @errors = User.validate_user_complete_errors(@user)
     respond_to do |format|
       format.html { redirect_to user_languages_url, notice: 'User language was successfully destroyed.' }
       format.json { head :no_content }

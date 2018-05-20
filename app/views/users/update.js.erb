@@ -6,3 +6,5 @@
 <% else %>
 	$('.head-user').html("<%= j (render :partial => 'users/header_user') %>");
 <% end %>
+
+<%= render 'users/user_validations.js.erb' %>

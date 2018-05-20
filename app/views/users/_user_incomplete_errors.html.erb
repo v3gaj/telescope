@@ -1,0 +1,6 @@
+<div class="alert alert-danger user-incomplete-profile">
+  <h5>User incomplete, you cannot apply until the following sections are completed</h5>
+  <% @errors.each do |error| %>
+    <%= t(error) %></br>
+  <% end %>
+</div>

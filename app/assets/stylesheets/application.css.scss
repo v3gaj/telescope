@@ -793,13 +793,6 @@ hr{
     }
 }
 
-/************************************ALERTS***********************************/
-
-
-.alert-max-width{
-	max-width: 1140px;
-}
-
 
 /************************************SERVICES***********************************/
 
@@ -2017,5 +2010,21 @@ footer{
 	&:hover{
 		background-color: #449d44 !important;
     border-color: #398439 !important;
+  }
+}
+
+
+.user-incomplete-profile{
+	position: relative;
+  margin: -30px -15px 30px -16px;
+  bottom: 0;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  width: inherit;
+
+  ul{
+  	li{
+  		text-align: left;
+  	}
   }
 }

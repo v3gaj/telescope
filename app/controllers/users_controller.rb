@@ -20,6 +20,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if !@user.complete
+      @errors = User.validate_user_complete_errors(@user)
+    end
     respond_to do |format|
       format.js   { render :layout => false }
     end
@@ -29,9 +32,9 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
+        @errors = User.validate_user_complete_errors(@user)
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -46,6 +49,9 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
+        if !@user.complete
+          @errors = User.validate_user_complete_errors(@user)
+        end
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
         format.js   { render :layout => false }
@@ -70,6 +76,7 @@ class UsersController < ApplicationController
   # CUSTOM ACTIONS
 
   def cancel_update
+    @errors = User.validate_user_complete_errors(@user)
     respond_to do |format|
       format.js   { render :layout => false }
     end
@@ -78,6 +85,12 @@ class UsersController < ApplicationController
   def profile
     @user = current_user
     get_relation_objects(@user)
+    if @user.complete
+      flash.now[:notice] = t('users.controller.notice')
+    else
+      flash.now[:danger] = t('users.controller.danger')
+      @errors = User.validate_user_complete_errors(@user)
+    end
   end
 
   private
@@ -95,6 +108,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:admin, :photo, :name, :surname, :headline, :short_description, :phone_number, :birth_date, :facebook, :google_plus, :twitter, :instagram, :pinterest, :youtube)
+      params.require(:user).permit(:admin, :photo, :name, :surname, :headline, :short_description, :phone_number, :birth_date, :facebook, :google_plus, :twitter, :instagram, :pinterest, :youtube, :complete)
     end
 end

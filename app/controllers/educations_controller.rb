@@ -36,6 +36,8 @@ class EducationsController < ApplicationController
     @education.user_id = @user.id
     respond_to do |format|
       if @education.save
+        # User Validation Profile
+        @errors = User.validate_user_complete_errors(@user)
         format.html { redirect_to @education, notice: 'Education was successfully created.' }
         format.json { render :show, status: :created, location: @education }
         format.js   { render :layout => false }
@@ -67,6 +69,8 @@ class EducationsController < ApplicationController
   # DELETE /educations/1.json
   def destroy
     @education.destroy
+    # User Validation Profile
+    @errors = User.validate_user_complete_errors(@user)
     respond_to do |format|
       format.html { redirect_to @education, notice: 'Education was successfully destroyed.' }
       format.json { head :no_content }

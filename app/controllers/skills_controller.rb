@@ -35,6 +35,8 @@ class SkillsController < ApplicationController
     @skill.user_id = @user.id
     respond_to do |format|
       if @skill.save
+        # User Validation Profile
+        @errors = User.validate_user_complete_errors(@user)
         format.html { redirect_to @skill, notice: 'Skill was successfully created.' }
         format.json { render :show, status: :created, location: @skill }
         format.js   { render :layout => false }
@@ -66,6 +68,8 @@ class SkillsController < ApplicationController
   # DELETE /skills/1.json
   def destroy
     @skill.destroy
+    # User Validation Profile
+    @errors = User.validate_user_complete_errors(@user)
     respond_to do |format|
       format.html { redirect_to skills_url, notice: 'Skill was successfully destroyed.' }
       format.json { head :no_content }

@@ -4,3 +4,5 @@
 	$('#render-user-education').html("<%= j (render :template => 'educations/index') %>");
 	education_create_js();
 <% end %>
+
+<%= render 'users/user_validations.js.erb' %>

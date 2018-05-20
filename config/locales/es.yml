@@ -52,6 +52,21 @@ es:
       birth_date: "Edad"
       age: "años"
       follow_me: "Sígueme en"
+    controller:
+      danger: "La información del usuario esta incompleta, podras aplicar a posiciones hasta que completes toda la información del perfil."
+      notice: "La información del usuario esta completa, puedes aplicar a posiciones."
+    model:
+      errors:
+        name: "Nombre debe ser incluido"
+        surname: "Apellido debe ser incluido"
+        headline: "Profesión debe ser incluida"
+        short_description: "Carta de presentación debe ser incluida"
+        phone_number: "Número de teléfono debe ser incluido"
+        birth_date: "Fecha de nacimiento debe ser incluida"
+        educations: "La información de educación esta incompleta, debes incluir al menos una referencia"
+        experiences: "La información sobre experiencia laboral esta incompleta, debes incluir al menos una referencia"
+        languages: "La información de idiomas esta incompleta, debes incluir al menos una referencia"
+        skills: "La información sobre habilidades esta incompleta, debes incluir al menos una habilidad"
   educations:
     index:
       not_completed: "Incompleto"
@@ -167,5 +182,7 @@ es:
       incorrect_percentage: "no es un porcentaje válido"
       start_date_greater: "debe ser mayor que la fecha de inicio"
       max_skills_reached: "Has alcanzado el maximo de habilidades posibles, ya no puedes incluir mas."
+
+
 
 

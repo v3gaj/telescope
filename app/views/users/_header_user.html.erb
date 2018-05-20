@@ -1,3 +1,14 @@
+<div id="user-incomplete-profile" ">
+  <% if !@user.complete? %>
+    <div class="alert alert-danger user-incomplete-profile">
+      <h5>User incomplete, you cannot apply until the following sections are completed</h5>
+      <% @errors.each do |error| %>
+        <%= t(error) %></br>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
 <div class="col-lg-4 photo-wrapper">
   <% if @user.photo? %>
     <%= image_tag @user.photo(:normal) %> 
@@ -29,7 +40,7 @@
 
   <hr>
 
-  <% if @user.headline? %>
+  <% if @user.short_description? %>
     <p><%= @user.short_description %></p>
   <% else %>
     <p><%= t('.short_description') %></p>

@@ -19,9 +19,9 @@
 		<div class="nav-right">
 			<ul class="nav navbar-nav">
 				<% if params['locale'] == "es" %>
-					<li class="nav-li"><%= link_to_unless_current "English", locale: "en", :class => 'nav-link' %></li>
+					<li class="nav-li"><%= link_to_unless_current "English", locale: "en" %></li>
 				<% else %>
-					<li class="nav-li"><%= link_to_unless_current "Español", locale: "es", :class => 'nav-link' %></li>
+					<li class="nav-li"><%= link_to_unless_current "Español", locale: "es" %></li>
 				<% end %>
 				<% if !current_user %>
 					<li><%= link_to t("header.login"), new_user_session_path, :class => "btn btn-primary btn-blue login-link" %></li>

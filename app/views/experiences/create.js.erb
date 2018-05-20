@@ -4,3 +4,5 @@
 	$('#render-user-experience').html("<%= j (render :template => 'experiences/index') %>");
 	experience_create_js();
 <% end %>
+
+<%= render 'users/user_validations.js.erb' %>

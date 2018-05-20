@@ -25,7 +25,6 @@ class LanguagesController < ApplicationController
   # POST /languages.json
   def create
     @language = Language.new(language_params)
-
     respond_to do |format|
       if @language.save
         format.html { redirect_to languages_url, notice: 'Language was successfully created.' }

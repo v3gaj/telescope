@@ -35,6 +35,8 @@ class ExperiencesController < ApplicationController
     @experience.user_id = @user.id
     respond_to do |format|
       if @experience.save
+        # User Validation Profile
+        @errors = User.validate_user_complete_errors(@user)
         format.html { redirect_to @experience, notice: 'Experience was successfully created.' }
         format.json { render :show, status: :created, location: @experience }
         format.js   { render :layout => false }
@@ -66,6 +68,8 @@ class ExperiencesController < ApplicationController
   # DELETE /experiences/1.json
   def destroy
     @experience.destroy
+    # User Validation Profile
+    @errors = User.validate_user_complete_errors(@user)
     respond_to do |format|
       format.html { redirect_to experiences_url, notice: 'Experience was successfully destroyed.' }
       format.json { head :no_content }
