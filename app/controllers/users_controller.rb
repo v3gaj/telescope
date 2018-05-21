@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     get_relation_objects(@user)
+    @errors = User.validate_user_complete_errors(@user)
   end
 
   # GET /users/new

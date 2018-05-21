@@ -112,7 +112,7 @@
     </div>
     <div class="action-buttons-right">
       <%= f.submit(@user.new_record? ? t('.create', :default => t("helpers.links.create")) : 
-                                      t('.update', :default => t("helpers.links.update")), class: 'btn btn-primary btn-blue') %>
+                                      t('.update', :default => t("helpers.links.update")), :class => 'btn btn-primary btn-blue') %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 cancel_update_user_path(id: @user.id), :class => 'btn btn-default btn-white', :remote => true %>
     </div>
