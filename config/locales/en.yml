@@ -32,6 +32,7 @@
 en:
   menu:
     home: "Home"
+    jobs: "Jobs"
     services: "Services"
     about: "About"
     contact: "Contact"
@@ -91,6 +92,18 @@ en:
     form:
       language: "Select language"
       level: "Select level"
+  jobs:
+    form:
+      language: "Select language"
+      industry: "Select industry"
+      employment: "Select employment"
+      schedule: "Select schedule"
+      province: "Select province"
+  applications:
+    create:
+      button_label: "You have already applied!"
+      successfully_applied: "You have successfully applied to this postion!"
+      already_applied: "You already applied to this position"
   activerecord:
     attributes:
       user:
@@ -107,7 +120,6 @@ en:
       incorrect_percentage: "is not a valid percentage"
       start_date_greater: "must be equal or greater than start date"
       max_skills_reached: "You have reached the maximun of posible skills, you cannot include more skills"
-  controllers:
-    users:
-      incomplete: "User information is incomplete, you will not be able to apply for positions until you complete all profile sections."
+      incorrect_status: "is invalid"
+
 

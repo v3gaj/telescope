@@ -1,1 +1,5 @@
-<%= render :template => 'users/show' %>
+<% if User::user_admin_content_allowed?(current_user) %>
+	<%= render :template => 'users/admin_profile' %>
+<% else %>
+	<%= render :template => 'users/show' %>
+<% end %>

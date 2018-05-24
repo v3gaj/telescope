@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_19_181021) do
+ActiveRecord::Schema.define(version: 2018_05_23_021840) do
+
+  create_table "applications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "job_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_applications_on_job_id"
+    t.index ["user_id"], name: "index_applications_on_user_id"
+  end
 
   create_table "degree_translations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "degree_id", null: false
@@ -104,6 +114,8 @@ ActiveRecord::Schema.define(version: 2018_05_19_181021) do
     t.string "other_signs"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
+    t.datetime "hire_date"
     t.index ["employment_id"], name: "index_jobs_on_employment_id"
     t.index ["industry_id"], name: "index_jobs_on_industry_id"
     t.index ["language_id"], name: "index_jobs_on_language_id"
@@ -243,6 +255,8 @@ ActiveRecord::Schema.define(version: 2018_05_19_181021) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "applications", "jobs"
+  add_foreign_key "applications", "users"
   add_foreign_key "educations", "degrees"
   add_foreign_key "educations", "users"
   add_foreign_key "experiences", "users"

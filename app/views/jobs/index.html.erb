@@ -8,9 +8,13 @@
 
       <%= render :partial => 'table' %>
 
-      <%= link_to t('.new', :default => t("helpers.links.new")),
-                  new_job_path,
-                  :class => 'btn btn-primary' %>
+        <% if User::user_admin_content_allowed?(current_user) %>
+          <div class="add-job-link">
+            <%= link_to t('.new', :default => t("helpers.links.new")),
+                        new_job_path,
+                        :class => 'btn btn-primary btn-blue' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

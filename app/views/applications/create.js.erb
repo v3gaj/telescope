@@ -1,0 +1,12 @@
+$("#apply-now-button").bind('ajax:success', function(event) {
+	$(this).hide();
+	$(this).parent().html('<div class="info-label alert-info"><strong><%= t("applications.create.button_label") %></strong></div>');
+});
+
+<% if flash[:danger] %>
+	$('#render-alert').html('<div class="alert fade in alert-danger"><button type="button" class="close" data-dismiss="alert">×</button><%= flash[:danger] %></div>');
+<% end %>
+
+<% if flash[:notice] %>
+	$('#render-alert').html('<div class="alert fade in alert-success"><button type="button" class="close" data-dismiss="alert">×</button><%= flash[:notice] %></div>');
+<% end %>

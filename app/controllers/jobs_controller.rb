@@ -1,6 +1,8 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
   before_action :selects_form, only: [:new, :edit,:create, :update]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_admin, except: [:index, :show]
 
   # GET /jobs
   # GET /jobs.json
@@ -26,6 +28,7 @@ class JobsController < ApplicationController
   # POST /jobs.json
   def create
     @job = Job.new(job_params)
+    @job.status = 'Open'
     respond_to do |format|
       if @job.save
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
@@ -69,7 +72,7 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:job_title, :job_description, :language_id, :industry_id, :employment_id, :schedule_id, :province, :other_signs)
+      params.require(:job).permit(:job_title, :job_description, :language_id, :industry_id, :employment_id, :schedule_id, :province, :other_signs, :status, :hire_date)
     end
 
     def selects_form

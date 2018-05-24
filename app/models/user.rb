@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :experiences, :dependent => :destroy
   has_many :skills, :dependent => :destroy
   has_many :user_languages, :dependent => :destroy
+  has_many :applications, :dependent => :nullify
+  has_many :jobs, through: :applications
 
   # VALIDATIONS
 
@@ -111,6 +113,10 @@ class User < ApplicationRecord
 
 	def self.user_content_allowed?(user, current_user)
 		user == current_user ? true : false
+	end
+
+	def self.user_admin_content_allowed?(current_user)
+		current_user && current_user.admin ? true : false
 	end
 
 

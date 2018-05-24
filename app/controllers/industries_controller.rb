@@ -1,5 +1,7 @@
 class IndustriesController < ApplicationController
   before_action :set_industry, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
+  before_action :require_admin
 
   # GET /industries
   # GET /industries.json

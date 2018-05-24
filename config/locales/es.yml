@@ -32,6 +32,7 @@
 es:
   menu:
     home: "Inicio"
+    jobs: "Empleos"
     services: "Servicios"
     about: "Nosotros"
     contact: "Contacto"
@@ -97,6 +98,18 @@ es:
     form:
       language: "Seleccione el lenguaje"
       level: "Seleccione el nivel"
+  jobs:
+    form:
+      language: "Seleccione el languaje"
+      industry: "Seleccione la industria"
+      employment: "Seleccione el tipo de empleo"
+      schedule: "Seleccione el horario"
+      province: "Seleccione la provincia"
+  applications:
+    create:
+      button_label: "Ya has aplicado!"
+      successfully_applied: "Has aplicado exitosamente a esta posición!"
+      already_applied: "Ya aplicaste a esta posición"
   activerecord:
     attributes:
       slide:
@@ -127,6 +140,8 @@ es:
         schedule_id: "Horario"
         industry_id: "Industria"
         employment_id: "Empleo"
+        hire_date: "Fecha de Contratación"
+        status: "Estado"
       degree: 
         title: "Título"
         not_available: "No disponible"
@@ -182,6 +197,7 @@ es:
       incorrect_percentage: "no es un porcentaje válido"
       start_date_greater: "debe ser mayor que la fecha de inicio"
       max_skills_reached: "Has alcanzado el maximo de habilidades posibles, ya no puedes incluir mas."
+      incorrect_status: "no es válido"
 
 
 

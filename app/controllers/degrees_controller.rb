@@ -1,5 +1,7 @@
 class DegreesController < ApplicationController
   before_action :set_degree, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
+  before_action :require_admin
 
   # GET /degrees
   # GET /degrees.json

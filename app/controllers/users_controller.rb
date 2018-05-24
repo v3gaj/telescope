@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :cancel_update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :cancel_update, :admin_profile, :profile_content, :profile_applications]
+  before_action :require_user
+  before_action :require_admin, only: [:index, :show]
 
   # GET /users
   # GET /users.json
@@ -85,12 +87,29 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
+    if !@user.admin
+      get_relation_objects(@user)
+      if @user.complete
+        flash.now[:notice] = t('users.controller.notice')
+      else
+        flash.now[:danger] = t('users.controller.danger')
+        @errors = User.validate_user_complete_errors(@user)
+      end
+    end
+  end
+
+  def profile_content
     get_relation_objects(@user)
-    if @user.complete
-      flash.now[:notice] = t('users.controller.notice')
-    else
-      flash.now[:danger] = t('users.controller.danger')
-      @errors = User.validate_user_complete_errors(@user)
+    respond_to do |format|
+      format.js   { render :layout => false }
+    end
+  end
+
+  def profile_applications
+    @jobs = @user.jobs.all.joins(:applications).where(created_at: 6.months.ago..Time.now).order('applications.created_at DESC')
+
+    respond_to do |format|
+      format.js   { render :layout => false }
     end
   end
 

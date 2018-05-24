@@ -140,7 +140,17 @@ hr{
 	padding-bottom: 100px;
 }
 
+.wrapper-top{
+	padding-top: 100px;
+	overflow: auto;
+}
+
 .wrapper{
+	padding: 100px 0;
+	overflow: auto;
+}
+
+.wrapper-no-overflow{
 	padding: 100px 0;
 }
 
@@ -419,6 +429,7 @@ hr{
 	text-align: center;
 }
 
+.job-form-wrapper,
 .user_language-form-wrapper,
 .skill-form-wrapper,
 .experience-form-wrapper,
@@ -451,8 +462,7 @@ hr{
 
   p, .form-p{
   	font-size: 18px;
-  	line-height: 30px;
-  }
+  	line-height: 30pxeducati  }
 
   p{
   	margin-bottom: 20px;
@@ -465,6 +475,7 @@ hr{
   }
 }
 
+.job-form-wrapper,
 .user_language-form-wrapper,
 .skill-form-wrapper,
 .experience-form-wrapper,
@@ -473,6 +484,7 @@ hr{
 	padding: 30px 15px 20px;
 }
 
+.job-form-wrapper,
 .user_language-form-wrapper,
 .skill-form-wrapper,
 .experience-form-wrapper,
@@ -646,6 +658,7 @@ hr{
 	 font-size: 16px;
 }
 
+.form-job,
 .form-user_language,
 .form-skill,
 .form-experience,
@@ -697,6 +710,7 @@ hr{
 	}
 }
 
+.form-job,
 .form-user_language,
 .form-skill,
 .form-experience,
@@ -1491,6 +1505,7 @@ footer{
   }
 }
 
+.job-button-group,
 .user_language-button-group,
 .skill-button-group,
 .experience-button-group,
@@ -1583,6 +1598,10 @@ footer{
   	-webkit-box-shadow: 0 3px 15px 0 rgba(0,0,0,.1);
     box-shadow: 0 3px 15px 0 rgba(0,0,0,.1);
   }
+}
+
+.job-block{
+	position: relative;
 }
 
 .user_language-header,
@@ -1788,6 +1807,7 @@ footer{
 	padding-right: 0px;
 }
 
+.job-input-wrapper,
 .user_language-input-wrapper,
 .skill-input-wrapper,
 .experience-input-wrapper,
@@ -1829,6 +1849,7 @@ footer{
 	}
 }
 
+.job-input-wrapper,
 .user_language-input-wrapper,
 .skill-input-wrapper,
 .experience-input-wrapper,
@@ -1837,12 +1858,26 @@ footer{
 		width: 100%
 	}
 }
+
+.job-input-wrapper,
 .skill-input-wrapper,
 .experience-input-wrapper,
 .education-input-wrapper,
 .header-input-wrapper{
 	margin-bottom: 10px;
 	overflow: auto;
+}
+
+.job-input-wrapper{
+	#job_hire_date_1i{
+		width: 30%;
+	}
+	#job_hire_date_2i{
+		width: 40%;
+	}
+	#job_hire_date_3i{
+		width: 30%;
+	}
 }
 
 .form-user-description{
@@ -1897,6 +1932,14 @@ footer{
 	}
 }
 
+/************************************LABELS***********************************/
+
+.info-label{
+	border-radius: 2px;
+	border: 1px solid #bce8f1;
+	padding: 11px 15px;
+}
+
 /************************************OVERWRITE DROPIFY***********************************/
 
 .dropify-wrapper .dropify-preview {
@@ -1925,11 +1968,29 @@ footer{
 
 /************************************DEGREE***********************************/
 
+.add-job-link,
 .add-user_language-link,
 .add-skill-link,
 .add-experience-link,
 .add-education-link{
 	text-align: center;
+}
+
+.back-jobs-link,
+.show-jobs-links{
+	text-align: right;
+}
+
+.show-jobs-links{
+	margin-bottom: 30px;
+}
+
+.back-jobs-link{
+	margin-top: 30px;
+}
+
+.add-job-link{
+	margin-top: 30px;
 }
 
 .degree-color{
@@ -1951,6 +2012,7 @@ footer{
 	padding-left: 15px;
 }
 
+.delete-application,
 .delete-user_language,
 .delete-skill,
 .delete-experience,
@@ -1960,10 +2022,15 @@ footer{
   top: -13px;
 }
 
+.delete-application{
+	top: -5px;
+}
+
 .delete-skill{
 	top: -20px;
 }
 
+.delete-application-link,
 .delete-user_language-link,
 .delete-skill-link,
 .delete-experience-link,
@@ -2030,4 +2097,61 @@ footer{
   		text-align: left;
   	}
   }
+}
+
+.side-bar-job{
+	background-color: #fff;
+  border: 1px solid #eee;
+  border-bottom: 2px solid #eee;
+  -webkit-box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.03);
+
+  h3{
+  	text-align: center;
+  	margin-bottom: 20px;
+  	padding-bottom: 15px;
+  	border-bottom: solid 1px #eee;  
+  }
+
+  a{
+  	width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+.tablink {
+  color: white;
+  float: left;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 18px;
+  width: 25%;
+  text-align: center;
+  letter-spacing: 1px;
+
+  &:focus,
+  &:hover{
+  	color: white;
+    text-decoration: none;
+  }
+}
+
+.user-profile-tab{
+	background-color: #29aafe;
+}
+
+.profile-content-user{
+	border-top: solid 10px #29aafe;
+}
+
+.user-applications-tab{
+	background-color: #5cb85c;
+}
+
+.profile-applications-user{
+	border-top: solid 10px #5cb85c;
+}
+
+.no-jobs-message{
+	text-align: center;
 }

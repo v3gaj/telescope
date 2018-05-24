@@ -1,5 +1,7 @@
 class LanguageLevelsController < ApplicationController
   before_action :set_language_level, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
+  before_action :require_admin
 
   # GET /language_levels
   # GET /language_levels.json

@@ -11,6 +11,7 @@
 		<div class="navbar-collapse collapse navbar-responsive-collapse nav-center">
 			<ul class="nav navbar-nav">
 				<li><%= active_link_to t("menu.home"), root_path, active: :exclusive, :class => 'nav-link' %></li>
+				<li><%= active_link_to t("menu.jobs"), jobs_path, active: :inclusive, :class => 'nav-link' %></li>
 				<li><%= active_link_to t("menu.services"), services_path, active: :exclusive, :class => 'nav-link' %></li>
 				<li><%= active_link_to t("menu.about"), about_path, active: :exclusive, :class => 'nav-link' %></li>
 				<li><%= active_link_to t("menu.contact"), contact_path, active: :exclusive, :class => 'nav-link' %></li>
@@ -27,8 +28,8 @@
 					<li><%= link_to t("header.login"), new_user_session_path, :class => "btn btn-primary btn-blue login-link" %></li>
 					<li><%= link_to t("header.register"), new_user_registration_path, :class => "btn btn-success btn-green register-link" %></li>
 				<% else %>
-					<li><%= link_to t("header.logout"), destroy_user_session_path, method: :delete, :class => "btn btn-danger btn-white logout-link" %></li>
 					<li><%= link_to t("header.profile"), profile_path, :class => "btn btn-success btn-green profile-link" %></li>
+					<li><%= link_to t("header.logout"), destroy_user_session_path, method: :delete, :class => "btn btn-danger btn-white logout-link" %></li>
 			    <% end %>
 			</ul>
 		</div>

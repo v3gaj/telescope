@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 			resources :user_languages, :except => [:show]
 		end
 		resources :degrees, :except => [:show]
+		resources :applications, :except => [:show]
 
 		# Message Mailer
 		get 'cancel_update_user', to: 'users#cancel_update'
@@ -44,6 +45,8 @@ Rails.application.routes.draw do
 
 		# User languages custom
 		get 'profile', to: 'users#profile'
+		get 'profile_content', to: 'users#profile_content'
+		get 'profile_applications', to: 'users#profile_applications'
 
   	# Message Mailer
   	post 'contact', to: 'messages#create'

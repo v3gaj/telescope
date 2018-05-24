@@ -1,5 +1,7 @@
 class EmploymentsController < ApplicationController
   before_action :set_employment, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
+  before_action :require_admin
 
   # GET /employments
   # GET /employments.json

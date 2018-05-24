@@ -53,7 +53,7 @@
     </div> 
     <div class="col-lg-12 user-birth-date header-input-wrapper">
       <%= f.label :birth_date, :class => 'control-label' %>
-      <%= f.date_select :birth_date, :class => 'form-user-header', :start_year => 1950, :end_year => Time.now.year %>
+      <%= f.date_select :birth_date, :include_blank => true, :default => nil, :class => 'form-user-header', :start_year => 1950, :end_year => Time.now.year %>
     </div>
     <div class="col-lg-12 user-phone-number">
       <%= f.label :phone_number, :class => 'control-label' %>

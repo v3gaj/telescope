@@ -2,6 +2,8 @@ class SkillsController < ApplicationController
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:edit, :new, :create, :update, :destroy, :cancel]
   before_action :set_skill_all, only: [:index, :edit, :new, :create, :update, :destroy, :cancel]
+  before_action :require_user
+  before_action :require_same_user, only: [:new, :edit, :create, :update, :destroy, :cancel]
 
   # GET /skills
   # GET /skills.json

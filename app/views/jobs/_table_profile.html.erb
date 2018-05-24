@@ -2,7 +2,22 @@
   <% if @jobs.length > 0 %>
     <% @jobs.each do |job| %>
       <%= link_to job_path(job) do %>
+
         <div class="job-block">
+          <% if params[:controller] == 'users' && params[:action] == 'profile_applications' || 
+             params[:controller] == 'applications' && params[:action] == 'destroy' %>
+
+            <div class="delete-application">
+              <%= link_to application_path(Application::return_application(job, @user), :application => {:user_id => @user.id}), :method => 'delete', :remote => true, 
+                                      :class => 'btn btn-danger delete-application-link', 
+                                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :toggle => "tooltip", :placement => "bottom"}, 
+                                      :title => t('.delete') do %>
+                <i class="fa fa-times"></i>
+              <% end %>
+            </div>
+
+          <% end %>
+
           <div class="job-header">
             <i class="fa <%= job.industry.icon %> icon-industry" aria-hidden="true"></i>
             <div class="job-header-main">
@@ -32,6 +47,6 @@
       <% end %>
     <% end %>
   <% else %>
-    <h2 class="no-jobs-message" >No hay puestos disponibles</h2>
+    <h2 class="no-jobs-message">No has aplicado a un puesto en los ultimos 6 meses</h2>
   <% end %>
 </div>

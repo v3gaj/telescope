@@ -3,6 +3,8 @@ class EducationsController < ApplicationController
   before_action :set_user, only: [:edit, :new, :create, :update, :destroy, :cancel]
   before_action :set_education_all, only: [:index, :edit, :new, :create, :update, :destroy, :cancel]
   before_action :selects_form, only: [:new, :edit, :create, :update]
+  before_action :require_user
+  before_action :require_same_user, only: [:new, :edit, :create, :update, :destroy, :cancel]
 
   # GET /educations
   # GET /educations.json
