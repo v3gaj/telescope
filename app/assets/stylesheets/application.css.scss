@@ -202,9 +202,14 @@ hr{
 			background-color: #29aafe;
 			border-bottom: 1px solid #fff;
 			margin: 0 15px 0 15px;
+    	border-radius: 3px;
 
 			a{
 				text-decoration: none;
+				font-size: 12px;
+		    font-weight: 600;
+		    text-transform: uppercase;
+		    letter-spacing: 1px;
 			}
 		}
 	}
@@ -224,7 +229,7 @@ hr{
   background: transparent;
   font-weight: 500;
   opacity: 0.6;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: opacity 0.3s ease-in-out;
 
   &:hover{
@@ -278,6 +283,14 @@ hr{
 	.login-link{
 		color: #fff !important
 	}
+
+	.nav-left{
+		a{
+			color: #29aafe;
+		}
+	}
+
+
 }
 
 .nav-center{
@@ -299,6 +312,16 @@ hr{
 	float: left;
 	display: inline-block;
 	height: 54px;
+	font-weight: 700;
+
+	a{
+		font-family: 'Philosopher', sans-serif;
+		text-decoration: none;
+		font-size: 40px;
+		color: #fff;
+		top: -5px;
+    position: relative;
+	}
 }
 
 .navbar-toggle{
@@ -2336,6 +2359,11 @@ footer{
 
 	.nav-li a{
 		color: #000;
+	}
+
+	.nav-left a {
+    color: #29aafe;
+    font-size: 45px;
 	}
 
 	.user-button-group {
