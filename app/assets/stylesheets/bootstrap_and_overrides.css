@@ -10,8 +10,11 @@
     border-color: transparent;
 }
 
-.navbar-collapse.collapse{
-	display: inline-block !important;
+@media (min-width: 768px){
+
+	.navbar-collapse.collapse{
+		display: inline-block !important;
+	}
 }
 
 .navbar-brand{
@@ -85,13 +88,6 @@
 .alert-success{
 	background-color: #4BBF73;
     border-color: #4BBF73;
-}
-
-@media (min-width: 1000px){
-	.col-lg-4 {
-	    width: 50%;
-	    float: left;
-	}
 }
 
 @media (min-width: 1200px){

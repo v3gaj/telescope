@@ -4,7 +4,7 @@ class ApplicationsController < ApplicationController
   before_action :require_user
   before_action :require_admin, only: [:index, :edit, :new, :update]
   before_action :require_same_user, only: [:create, :destroy]
-  before_action :admin_not_allowed, only: [:create]
+  before_action :admin_not_allowed, only: [:create, :destroy]
 
   # GET /applications
   # GET /applications.json

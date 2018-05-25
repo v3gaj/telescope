@@ -173,6 +173,49 @@ hr{
 
 /************************************NAVIGATION***********************************/
 
+.nav-right,
+.nav-center{
+	display: inline-block;
+
+	ul{
+		list-style-type: none;
+		margin-bottom: 0;
+		margin-bottom: 2px;
+
+		li{
+			display: inline-block;
+		}
+	}
+}
+
+.nav-li a,
+.nav-link{
+	color: #fff;
+	padding: 17px 15px 15px 15px;
+  line-height: 20px;
+  position: relative;
+  display: block;
+  background: transparent;
+  font-weight: 500;
+  opacity: 0.6;
+  text-decoration: none;
+  transition: opacity 0.3s ease-in-out;
+
+  &:hover{
+  	color: rgb(255, 255, 255);
+		opacity: 1;
+  }
+}
+
+.nav-li a{
+	opacity: 1;
+}
+
+.nav-right{
+	float: right;
+	display: inline-block;
+}
+
 .nav-bar{
 	position: absolute;
   width: 100%;
@@ -212,8 +255,6 @@ hr{
 
 .nav-center{
 	text-align: center;
-	display: inline-block !important;
-
 }
 
 .nav-right{
@@ -232,19 +273,14 @@ hr{
 	display: inline-block;
 }
 
+.navbar-toggle{
+	margin-top: 0;
+	color: #000;
+	font-size: 25px
+}
 
-.nav-center,
-.nav-right{
-	.nav-link{
-	    font-weight: 500;
-	    opacity: 0.6;
-	    transition: opacity 0.3s ease-in-out;
-
-	    &:hover{
-	    	color: rgb(255, 255, 255);
-    		opacity: 1;
-	    }
-	}
+.toogle-menu{
+	display: block !important;
 }
 
 .active{
@@ -421,6 +457,7 @@ hr{
 }
 
 
+
 /************************************PAGE-HEADER***********************************/
 
 .page-head{
@@ -510,7 +547,8 @@ hr{
 /************************************HOME-SERVICES***********************************/
 
 .services-grid{
-	display: inline-block;
+	text-align: center;
+	font-size: 0;
 	a{
 		display: inline-block;
 	    float: left;
@@ -590,6 +628,8 @@ hr{
 
 .service-wrapper{
 	padding: 0 15px 0 15px;
+	display: inline-block;
+	width: 33.333333%
 }
 
 
@@ -1884,19 +1924,33 @@ footer{
 	margin-bottom: 5px !important;
 }
 
+.user-birth-date,
 .user-phone-number{
 	label{
-		width: 17%;
+		width: 20%;
+		text-align: left !important;
+	}
+}
+
+.user-phone-number{
+	margin-bottom: 10px;
+
+	label{
+		width: 20%;
 		float: left;
 		text-align: left !important;
 		padding-top: 10px !important;
+	}
+
+	input{
+		width: 50%;
 	}
 }
 
 .user-birth-date{
 
 	label{
-		width: 18.42%;
+		width: 20%;
 		text-align: left !important;
 	}
 
@@ -2055,10 +2109,8 @@ footer{
 .profile-link,
 .logout-link,
 .login-link{
-  padding-top: 8px !important;
-  margin-top: 8px !important;
-  height: 35px;
-  margin-right: 5px;
+  height: 36px;
+  line-height: 36px;
 }
 
 .login-link{
@@ -2152,6 +2204,146 @@ footer{
 	border-top: solid 10px #5cb85c;
 }
 
+.user-maintenance-tab{
+	background-color: #d43f3a;
+}
+
+.profile-maintenance-user{
+	border-top: solid 10px #d43f3a;
+}
+
 .no-jobs-message{
 	text-align: center;
 }
+
+.maintenance-block{
+	h2{
+		text-align: center;
+	}
+
+	a{
+		width: 100%;
+		margin-bottom: 8px;
+	}
+}
+
+.user-birth-date{
+	display: table;
+}
+
+/************************************RESPONSIVE***********************************/
+
+
+@media (max-width: 1200px){
+	.service-wrapper {
+	    width: 50%;
+	}
+
+	.photo-wrapper,
+	.form-user-wrapper,
+	.user-details-wrapper{
+		width: 50%;
+		float: left;
+	}
+}
+
+@media (max-width: 991px){
+	.user-birth-date,
+	.photo-wrapper,
+	.service-wrapper {
+	    width: 100%;
+	}
+
+	.photo-wrapper{
+		padding-bottom: 15px;
+	}
+
+	.user-details-wrapper,
+	.form-user-wrapper{
+		width: 100%;
+	}
+
+	.user-phone-number input{
+		width: 80%;
+	}
+}
+
+@media (max-width: 767px){
+
+	.nav-center{
+		display: none;
+
+		ul{
+			padding: 0;
+		}
+
+		li{
+			width: 100%;
+		}
+	}
+
+	.nav-bar{
+		position: relative;
+	}
+
+	.nav-bar-white{
+		position: relative;
+	}
+
+	.nav-li a,
+	.nav-link{
+		color: #000;
+	}
+
+	.user-button-group {
+		a, input{
+	    width: 100%;
+	    margin: 0;
+    	margin-bottom: 5px;
+		}
+	}
+
+	.action-buttons-right,
+	.action-buttons-left{
+		float: none;
+	}
+
+	.user-birth-date{
+		label{
+			width: 100%;
+		}
+		#user_birth_date_1i{
+			width: 30%;
+		}
+		#user_birth_date_3i{
+			width: 30%;
+		}
+	}
+
+	.user-phone-number{
+		label, input{
+			width: 100%;
+		}
+	}
+
+	.tablink{
+		width: 100%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

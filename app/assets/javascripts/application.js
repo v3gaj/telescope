@@ -40,6 +40,14 @@ $(document).on('turbolinks:load', function() {
 	});
 	$('.dropify').dropify();
 	adjustImageDropify();	
+
+
+    $(".navbar-toggle").click(function(){
+    	$(".nav-center").slideToggle('normal', function(){
+        $(".nav-center").toggleClass("toogle-menu");
+        	
+      });	
+    });
 });
 
 function toolpit(){

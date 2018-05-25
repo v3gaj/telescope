@@ -47,6 +47,7 @@ Rails.application.routes.draw do
 		get 'profile', to: 'users#profile'
 		get 'profile_content', to: 'users#profile_content'
 		get 'profile_applications', to: 'users#profile_applications'
+		get 'profile_maintenance', to: 'users#profile_maintenance'
 
   	# Message Mailer
   	post 'contact', to: 'messages#create'

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :cancel_update, :admin_profile, :profile_content, :profile_applications]
   before_action :require_user
-  before_action :require_admin, only: [:index, :show]
+  before_action :require_admin, only: [:index, :show, :profile_maintenance]
 
   # GET /users
   # GET /users.json
@@ -108,6 +108,12 @@ class UsersController < ApplicationController
   def profile_applications
     @jobs = @user.jobs.all.joins(:applications).where(created_at: 6.months.ago..Time.now).order('applications.created_at DESC')
 
+    respond_to do |format|
+      format.js   { render :layout => false }
+    end
+  end
+
+  def profile_maintenance
     respond_to do |format|
       format.js   { render :layout => false }
     end

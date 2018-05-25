@@ -1,15 +1,13 @@
-<div class="navbar navbar-default navbar-static-top nav-bar">
+<div class="navbar navbar-static-top nav-bar">
 	<div class="container">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
+		<div class="navbar-toggle">
+			<i class="fa fa-bars" aria-hidden="true"></i>
+		</div>
 		<div class="nav-left">
 			<a class="navbar-brand" href="#">Telescope</a>
 		</div>
-		<div class="navbar-collapse collapse navbar-responsive-collapse nav-center">
-			<ul class="nav navbar-nav">
+		<div class="nav-center">
+			<ul>
 				<li><%= active_link_to t("menu.home"), root_path, active: :exclusive, :class => 'nav-link' %></li>
 				<li><%= active_link_to t("menu.jobs"), jobs_path, active: :inclusive, :class => 'nav-link' %></li>
 				<li><%= active_link_to t("menu.services"), services_path, active: :exclusive, :class => 'nav-link' %></li>
@@ -18,7 +16,7 @@
 			</ul>
 		</div>
 		<div class="nav-right">
-			<ul class="nav navbar-nav">
+			<ul>
 				<% if params['locale'] == "es" %>
 					<li class="nav-li"><%= link_to_unless_current "English", locale: "en" %></li>
 				<% else %>
