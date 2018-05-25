@@ -6,15 +6,6 @@
 		<div class="nav-left">
 			<a class="navbar-brand" href="#">Telescope</a>
 		</div>
-		<div class="nav-center">
-			<ul>
-				<li><%= active_link_to t("menu.home"), root_path, active: :exclusive, :class => 'nav-link' %></li>
-				<li><%= active_link_to t("menu.jobs"), jobs_path, active: :inclusive, :class => 'nav-link' %></li>
-				<li><%= active_link_to t("menu.services"), services_path, active: :exclusive, :class => 'nav-link' %></li>
-				<li><%= active_link_to t("menu.about"), about_path, active: :exclusive, :class => 'nav-link' %></li>
-				<li><%= active_link_to t("menu.contact"), contact_path, active: :exclusive, :class => 'nav-link' %></li>
-			</ul>
-		</div>
 		<div class="nav-right">
 			<ul>
 				<% if params['locale'] == "es" %>
@@ -31,5 +22,23 @@
 			    <% end %>
 			</ul>
 		</div>
+		<div class="nav-center">
+			<ul>
+				<li><%= active_link_to t("menu.home"), root_path, active: :exclusive, :class => 'nav-link' %></li>
+				<li><%= active_link_to t("menu.jobs"), jobs_path, active: :inclusive, :class => 'nav-link' %></li>
+				<li><%= active_link_to t("menu.services"), services_path, active: :exclusive, :class => 'nav-link' %></li>
+				<li><%= active_link_to t("menu.about"), about_path, active: :exclusive, :class => 'nav-link' %></li>
+				<li><%= active_link_to t("menu.contact"), contact_path, active: :exclusive, :class => 'nav-link' %></li>
+			</ul>
+		</div>
 	</div>
-</div>	
+</div>
+<div class="nav-mobile">
+			<ul>
+				<li><%= active_link_to t("menu.home"), root_path, active: :exclusive, :class => 'nav-link' %></li>
+				<li><%= active_link_to t("menu.jobs"), jobs_path, active: :inclusive, :class => 'nav-link' %></li>
+				<li><%= active_link_to t("menu.services"), services_path, active: :exclusive, :class => 'nav-link' %></li>
+				<li><%= active_link_to t("menu.about"), about_path, active: :exclusive, :class => 'nav-link' %></li>
+				<li><%= active_link_to t("menu.contact"), contact_path, active: :exclusive, :class => 'nav-link' %></li>
+			</ul>
+		</div>

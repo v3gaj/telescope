@@ -35,20 +35,29 @@ $(document).on('turbolinks:load', function() {
 	showScrollTop();
 	serviceTabs();
 	toolpit();
+	nav_mobile_toogle();
 	$(".slide img").load(function(){
 	  homeSliderHeight();
 	});
 	$('.dropify').dropify();
-	adjustImageDropify();	
+	adjustImageDropify();
 
-
-    $(".navbar-toggle").click(function(){
-    	$(".nav-center").slideToggle('normal', function(){
-        $(".nav-center").toggleClass("toogle-menu");
-        	
-      });	
-    });
+	$(window).resize( function() {
+		setTimeout(function(){
+			homeSliderHeight();
+		}, 250);
+  });
+  
 });
+
+function nav_mobile_toogle(){
+	$(".navbar-toggle").click(function(){
+  	$(".nav-mobile").slideToggle('normal', function(){
+      $(".nav-mobile").toggleClass("toogle-menu");
+      	
+    });	
+  });
+}
 
 function toolpit(){
 	$('[data-toggle="tooltip"]').tooltip();   
@@ -146,15 +155,16 @@ function homeSliderHeight(){
 			}
 		}
 
-		console.log(win, height)
+		if(height < 512){
+			height = 512
+		}
 
 		if (height > win) {
 			$('#home-slider').css('height', win);
 		    $('#home-slider .slide').css('height', win);
-
 		}else{
 			$('#home-slider').css('height', height);
-		    $('#home-slider .slide').css('height', height);
+		  $('#home-slider .slide').css('height', height);
 		}
 	}
 }
@@ -165,13 +175,12 @@ function scrollMenu(){
 		var menu = $('.navbar').offset();
 		var win = $(window).scrollTop();
 
-		if (win > menu.top) {
+		if (win > menu.top && $(window).width() >= 768) {
 			$('.navbar').addClass('nav-bar-white');
 		}else if (win < 20) {
 			$('.navbar').removeClass('nav-bar-white');
 		}
 	});
-
 }
 
 // If exist an image header for the view hide the general header image

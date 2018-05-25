@@ -181,10 +181,36 @@ hr{
 		list-style-type: none;
 		margin-bottom: 0;
 		margin-bottom: 2px;
+		padding-left: 0;
 
 		li{
 			display: inline-block;
 		}
+	}
+}
+
+.nav-mobile{
+	display: none;
+
+	ul{
+		list-style-type: none;
+		padding: 0;
+		margin-bottom: 15px;
+
+		li{
+			text-align: center;
+			background-color: #29aafe;
+			border-bottom: 1px solid #fff;
+			margin: 0 15px 0 15px;
+
+			a{
+				text-decoration: none;
+			}
+		}
+	}
+
+	.active{
+		background-color: #5cb85c;
 	}
 }
 
@@ -214,6 +240,7 @@ hr{
 .nav-right{
 	float: right;
 	display: inline-block;
+	text-align: right;
 }
 
 .nav-bar{
@@ -271,12 +298,14 @@ hr{
 .nav-left{
 	float: left;
 	display: inline-block;
+	height: 54px;
 }
 
 .navbar-toggle{
-	margin-top: 0;
+	margin: 0;
+	padding: 5px 0 0 15px;
 	color: #000;
-	font-size: 25px
+	font-size: 30px
 }
 
 .toogle-menu{
@@ -303,12 +332,21 @@ hr{
 	    bottom: 15px;
 	}
 
-	overflow: hidden;
-
 	img{
 		width: 100%;
 	}
 
+	.slide{
+		position: relative;
+		overflow: hidden;
+
+		img {
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		}
+	}
 	
 }
 
@@ -2266,6 +2304,10 @@ footer{
 	.user-phone-number input{
 		width: 80%;
 	}
+
+	.home-slider-content{
+		padding: 0 5% 0 5%;
+	}
 }
 
 @media (max-width: 767px){
@@ -2284,14 +2326,15 @@ footer{
 
 	.nav-bar{
 		position: relative;
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 
 	.nav-bar-white{
 		position: relative;
 	}
 
-	.nav-li a,
-	.nav-link{
+	.nav-li a{
 		color: #000;
 	}
 
@@ -2329,10 +2372,22 @@ footer{
 	.tablink{
 		width: 100%;
 	}
+
+	.home-slider img{
+		height: 100%;
+		width: initial;
+		margin: 0 auto;
+	}
+
 }
 
+@media (min-width: 768px){
+	.nav-mobile{
+		display: none !important;
+	}
 
 
+}
 
 
 
