@@ -209,7 +209,7 @@ hr{
 				font-size: 12px;
 		    font-weight: 600;
 		    text-transform: uppercase;
-		    letter-spacing: 1px;
+		    letter-spacing: 0;
 			}
 		}
 	}
@@ -2292,6 +2292,10 @@ footer{
 	display: table;
 }
 
+.contact-details{
+	float: right;
+}
+
 /************************************RESPONSIVE***********************************/
 
 
@@ -2330,6 +2334,11 @@ footer{
 
 	.home-slider-content{
 		padding: 0 5% 0 5%;
+	}
+
+	.contact-details{
+		width: 100%;
+		margin-bottom: 50px;
 	}
 }
 
@@ -2405,6 +2414,16 @@ footer{
 		height: 100%;
 		width: initial;
 		margin: 0 auto;
+	}
+
+	.image-service{
+		display: none;
+	}
+
+	.content-value img {
+    width: 175%;
+    transform: translate(-50%, -50%);
+    left: 50%;
 	}
 
 }
