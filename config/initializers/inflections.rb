@@ -28,4 +28,5 @@ ActiveSupport::Inflector.inflections(:es) do |inflect|
 
   inflect.irregular 'posición', 'posiciones'
   inflect.irregular 'industria', 'industrias'
+  inflect.irregular 'valor', 'valores'
 end

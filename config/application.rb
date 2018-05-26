@@ -17,5 +17,7 @@ module Telescope
     # the framework and any gems in your application.
 
     config.i18n.fallbacks = true
+
+    config.exceptions_app = self.routes
   end
 end

@@ -30,11 +30,6 @@
 
       </ul>
       <div class="job-button-group">
-        <ul class="social-information">
-          <li class="title">Share on</li>
-          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-        </ul>
-
         <div class="action-buttons-right">
           <% if current_user %>
             <% if Application::user_already_applied(@job, current_user) %>
@@ -46,6 +41,10 @@
             <%= link_to 'Apply now', new_user_session_path, :class => 'btn btn-success btn-green' %>
           <% end %>
         </div>
+        <ul class="social-information">
+          <li class="title">Share on</li>
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+        </ul>
       </div>
     </div>
     

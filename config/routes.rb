@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 		end
 		resources :degrees, :except => [:show]
 		resources :applications, :except => [:show]
+		resources :values, :except => [:show]
 
 		# Message Mailer
 		get 'cancel_update_user', to: 'users#cancel_update'
@@ -51,7 +52,20 @@ Rails.application.routes.draw do
 
   	# Message Mailer
   	post 'contact', to: 'messages#create'
+
+  	#Error routes
+  	match '/404', to: 'errors#file_not_found', via: :all
+		match '/422', to: 'errors#unprocessable', via: :all
+		match '/500', to: 'errors#internal_server_error', via: :all
+
+  	# Invalid routes
+  	get '*unmatched_route', to: 'errors#file_not_found'
+
 	end
-	get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
-	get '', to: redirect("/#{I18n.default_locale}")
+	#get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
+	#get '', to: redirect("/#{I18n.default_locale}")
+	get '/*locale/*path', to: redirect("/#{I18n.default_locale}/%{path}")
+	get '/*path', to: redirect("/#{I18n.default_locale}/%{path}"),
+  	constraints: lambda { |req| I18n.available_locales.none? { |locale| req.path.starts_with? locale.to_s } }
+  get '', to: redirect("/#{I18n.default_locale}")
 end

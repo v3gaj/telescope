@@ -8,6 +8,7 @@ class IndexController < ApplicationController
   end
 
   def about
+    @values = Value.all
   end
 
   def contact

@@ -52,88 +52,28 @@
 		</div>
  		<div class="tcvpb_section_content">
 			<div class="tcvpb_container">
-				<div class="values-wrapper col-lg-6">
-					<div class="tcvpb_metro_box ">
-						<div class="flipper">
-							<div class="front white-background content-value">
-								<%= image_tag 'int.jpg' %>
-								<div class="overlay-values"></div>
-								<div class="title-value">
-									<h1>Integridad</h1>
+				<% @values.each do |value| %>
+					<div class="values-wrapper">
+						<div class="tcvpb_metro_box ">
+							<div class="flipper">
+								<div class="front white-background content-value">
+									<%= image_tag value.image(:normal) %>
+									<div class="overlay-values"></div>
+									<div class="title-value">
+										<h1><%= value.title %></h1>
+									</div>
+									<i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
 								</div>
-							</div>
-							<div class="back">
-								<div class="content-back">
-									<h3>Integridad</h3>
-									<p>Nos gustan los negocios claros y transparentes, crecer apoyados en nuestras aptitudes y
-									esfuerzos propios y brindar un soporte a nuestros clientes con ética y de manera concreta.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="values-wrapper col-lg-6">
-					<div class="tcvpb_metro_box ">
-						<div class="flipper">
-							<div class="front white-background content-value">
-								<%= image_tag 'res.jpg' %>
-								<div class="overlay-values"></div>
-								<div class="title-value">
-									<h1>Respeto</h1>
-								</div>
-							</div>
-							<div class="back">
-								<div class="content-back">
-									<h3>Diversidad</h3>
-									<p>Sin duda alguna una de las bases de nuestro negocio es el respeto que tenemos a nivel
-									interno y externo. Respetamos lo que hacemos y por eso somos responsables en nuestras relaciones
-									con los clientes, nos gusta escuchar y compartir ideas bajo un ambiente sano y dinámico.</p>
+								<div class="back">
+									<div class="content-back">
+										<h3><%= value.title %></h3>
+										<p><%= value.description%></p>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="values-wrapper col-lg-6">
-					<div class="tcvpb_metro_box ">
-						<div class="flipper">
-							<div class="front white-background content-value">
-								<%= image_tag 'div.jpg' %>
-								<div class="overlay-values"></div>
-								<div class="title-value">
-									<h1>Diversidad</h1>
-								</div>
-							</div>
-							<div class="back">
-								<div class="content-back">
-									<h3>Diversidad</h3>
-									<p>Creemos que en la diferencia está la amplitud de conocimiento, por eso nos gusta saber
-									que es gracias a esas diferencias que podemos tener una amplia perspectiva.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="values-wrapper col-lg-6">
-					<div class="tcvpb_metro_box ">
-						<div class="flipper">
-							<div class="front white-background content-value">
-								<%= image_tag 'pas.jpg' %>
-								<div class="overlay-values"></div>
-								<div class="title-value">
-									<h1>Pasión</h1>
-								</div>
-							</div>
-							<div class="back">
-								<div class="content-back">
-									<h3>Pasión</h3>
-									<p>Creemos en nosotros mismos y lo reflejamos en nuestro compromiso de dar solo servicios
-									de calidad, gracias a nuestra pasión tenemos un enfoque claro de hacia adonde nos queremos
-									dirigir y esta confianza la transmitimos a nuestros clientes.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<% end %>
 			</div>
 		</div>
 	</div>

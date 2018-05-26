@@ -327,3 +327,11 @@ function user_language_create_js(){
 function user_language_update_js(){
 	toolpit();
 }
+
+function profile_application_js(){
+	toolpit();
+}
+
+function profile_content_js(){
+	toolpit();
+}

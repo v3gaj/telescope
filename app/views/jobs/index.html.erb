@@ -1,20 +1,23 @@
+<%- model_class = Job -%>
 <div class="container">
   <div class="col-lg-12">
-    <%- model_class = Job -%>
     <div class="page-head">
       <h1><%=t '.title', :default => model_class.model_name.human.pluralize(:es).titleize %></h1>
     </div>
-    <div class="wrapper">
+  </div>
+  <div>
+  <div class="wrapper overflow-wrapper">
+    <div class="col-lg-12">
+    <%= render :partial => 'table' %>
 
-      <%= render :partial => 'table' %>
-
-        <% if User::user_admin_content_allowed?(current_user) %>
-          <div class="add-job-link">
-            <%= link_to t('.new', :default => t("helpers.links.new")),
-                        new_job_path,
-                        :class => 'btn btn-primary btn-blue' %>
-        <% end %>
-      </div>
+      <% if User::user_admin_content_allowed?(current_user) %>
+        <div class="add-job-link">
+          <%= link_to t('.new', :default => t("helpers.links.new")),
+                      new_job_path,
+                      :class => 'btn btn-primary btn-blue' %>
+        </div>
+      <% end %>
+    </div>
     </div>
   </div>
 </div>

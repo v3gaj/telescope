@@ -99,6 +99,8 @@ en:
       employment: "Select employment"
       schedule: "Select schedule"
       province: "Select province"
+    table_profile:
+      delete: "Delete Application"
   applications:
     create:
       button_label: "You have already applied!"
@@ -109,6 +111,14 @@ en:
       user:
         short_description: "Cover letter"
   errors:
+    file_not_found: 
+      not_found: "The page you are looking does not exist!"
+    unprocessable:
+      unprocessable: "Your request can not be processed!"
+    internal_server_error:
+      server_error: "Please contact your administrator!"
+    shared:
+      return_home: "Return to home"
     messages:
       not_blank: "can't be blank"
       incorrect_format: "has a format not allowed"

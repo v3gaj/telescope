@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="col-lg-12"><%- model_class = Degree -%>
+    <div class="page-head">
+      <h1>Error 500</h1>
+      <p><%= t('.server_error') %></p>
+    </div>
+    <div class="wrapper return-home-link">
+    	<%= link_to t('errors.shared.return_home'), root_path, :class => "btn btn-success btn-green" %>
+    </div>
+  </div>
+</div>

@@ -105,8 +105,10 @@ es:
       employment: "Seleccione el tipo de empleo"
       schedule: "Seleccione el horario"
       province: "Seleccione la provincia"
+    table_profile:
+      delete: "Eliminar Aplicación"
   applications:
-    create:
+    index:
       button_label: "Ya has aplicado!"
       successfully_applied: "Has aplicado exitosamente a esta posición!"
       already_applied: "Ya aplicaste a esta posición"
@@ -168,9 +170,13 @@ es:
       language_level:
         title: "Título"
         not_available: "No disponible"
-      user_languages:
+      user_language:
         language: "Lenguaje"
         language_level: "Nivel de estudio"
+      value:
+        title: "Título"
+        description: "Descripción"
+        image: "Imagen"
     models:
       slide: "Slide"
       language: "Lenguaje"
@@ -183,8 +189,17 @@ es:
       experience: "Experiencia"
       skill: "Habilidad"
       language_level: 'Nivel de Idioma'
-      user_languages: "Lenguaje"
+      user_language: "Lenguaje"
+      value: 'Valor'
   errors:
+    file_not_found: 
+      not_found: "La página que buscas no existe!"
+    unprocessable:
+      unprocessable: "Tu solicitud no puede ser procesada!"
+    internal_server_error:
+      server_error: "Por favor contacte a su administrador!"
+    shared:
+      return_home: "Volver a inicio"
     messages:
       not_blank: "debe ser completado"
       incorrect_format: "tiene un formato no permitido"

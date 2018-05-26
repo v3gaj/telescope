@@ -100,6 +100,7 @@ class User < ApplicationRecord
 		else
 			user.complete = true
 		end
+		user.update(user.attributes)
 		return errors
 	end
 
@@ -108,7 +109,6 @@ class User < ApplicationRecord
 	def self.validate_user_complete_and_save(user)
 		user.complete = User::user_complete_validation(user)
 		user.update(user.attributes)
-		puts user
 	end
 
 	def self.user_content_allowed?(user, current_user)
