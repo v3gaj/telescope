@@ -1,7 +1,7 @@
 <% if @user.complete %>
 	$('#render-alert').html("<%= j (render :partial => 'users/user_complete') %>");
 	$('#user-incomplete-profile').html("")
-<% else %>
-	$('#render-alert').html("<%= j (render :partial => 'users/user_incomplete') %>");
-	$('#user-incomplete-profile').html("<%= j (render :partial => 'users/user_incomplete_errors') %>")
+<% elsif @errors != nil %>
+		$('#render-alert').html("<%= j (render :partial => 'users/user_incomplete') %>");
+		$('#user-incomplete-profile').html("<%= j (render :partial => 'users/user_incomplete_errors') %>")
 <% end %>
