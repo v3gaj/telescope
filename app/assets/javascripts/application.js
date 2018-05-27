@@ -52,9 +52,8 @@ $(document).on('turbolinks:load', function() {
 
 function nav_mobile_toogle(){
 	$(".navbar-toggle").click(function(){
-  	$(".nav-mobile").slideToggle('normal', function(){
+  	$(".nav-mobile").slideToggle(function(){
       $(".nav-mobile").toggleClass("toogle-menu");
-      	
     });	
   });
 }
