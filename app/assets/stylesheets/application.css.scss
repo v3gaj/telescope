@@ -2503,6 +2503,33 @@ footer{
   	}
 	}
 
+	.user-background,
+	.job-background,
+	.about-background,
+	.contact-background,
+	.header-background{
+		height: 241px;
+	}
+
+	.user-background,
+	.job-background{
+		background-image: url('div.jpg');
+		height: 400px;
+	}
+
+	.wrapper-bottom{
+		padding-bottom: 50px;
+	}
+
+	.wrapper-top{
+		padding-top: 50px;
+		overflow: auto;
+	}
+
+	.wrapper{
+		padding: 50px 0;
+	}
+
 }
 
 @media (min-width: 768px){
