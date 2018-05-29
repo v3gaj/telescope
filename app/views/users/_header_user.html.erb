@@ -19,8 +19,10 @@
 
 <% if User::user_content_allowed?(@user, current_user) %>
   <div class="edit-profile">
-    <%= link_to edit_user_path(@user), :remote => true do %>
-      <i class="fa fa-cog" data-toggle="tooltip" data-placement="bottom" title="Edit Profile"></i>
+    <%= link_to edit_user_path(@user), :remote => true, :class => 'btn btn-primary edit-profile-link',
+                            :data => { :toggle => "tooltip", :placement => "bottom"}, 
+                            :title => "Edit Profile" do %>
+      <i class="fa fa-pencil"></i>
     <% end %>
   </div>
 <% end %>

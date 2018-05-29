@@ -13,9 +13,15 @@
           </div>
 
           <div class="col-xs-6 col-md-3">
-            <h6>Telescope</h6>
+            <h6><%= t("menu.footer_title") %></h6>
             <ul class="footer-bar">
-              <%= render 'layouts/nav_bar' %>
+              <% if !current_user %>
+                <li><%= link_to t("menu.login"), new_user_session_path %></li>
+                <li><%= link_to t("menu.register"), new_user_registration_path %></li>
+              <% else %>
+                <li><%= link_to t("menu.profile"), profile_path %></li>
+                <li><%= link_to t("menu.logout"), destroy_user_session_path, method: :delete %></li>
+              <% end %>
             </ul>
           </div>
 

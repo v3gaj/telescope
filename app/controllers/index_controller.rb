@@ -5,6 +5,7 @@ class IndexController < ApplicationController
   end
 
   def services
+    @services = Service.all
   end
 
   def about

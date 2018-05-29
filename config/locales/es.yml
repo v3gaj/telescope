@@ -36,11 +36,11 @@ es:
     services: "Servicios"
     about: "Nosotros"
     contact: "Contacto"
-  header:
     login: "Ingresar"
     logout: "Salir"
     register: "Registrarse"
     profile: "Perfil"
+    footer_title: "Enlaces de Usuario"
   index:
     home:
       read_more: "Ver mas"
@@ -177,6 +177,11 @@ es:
         title: "Título"
         description: "Descripción"
         image: "Imagen"
+      service:
+        title: "Título"
+        subtitle: "Subtítulo"
+        description: "Descripción"
+        image: "Imagen"
     models:
       slide: "Slide"
       language: "Lenguaje"
@@ -191,6 +196,7 @@ es:
       language_level: 'Nivel de Idioma'
       user_language: "Lenguaje"
       value: 'Valor'
+      service: 'Servicio'
   errors:
     file_not_found: 
       not_found: "La página que buscas no existe!"

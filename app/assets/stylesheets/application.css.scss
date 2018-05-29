@@ -162,6 +162,18 @@ hr{
 	margin-top: 11px !important;
 }
 
+.alert{
+	padding-bottom: 30px;
+	padding-top: 30px;
+
+	button{
+		position: relative;
+		font-size: 40px;
+		top: -10px;
+		margin-bottom: -18px;
+	}
+}
+
 /************************************DEVISE***********************************/
 
 .col-lg-6{
@@ -191,6 +203,30 @@ hr{
 			display: inline-block;
 		}
 	}
+
+	.nav-li a,
+	.nav-link{
+		color: #fff;
+		padding: 17px 15px 15px 15px;
+	  line-height: 20px;
+	  position: relative;
+	  display: block;
+	  background: transparent;
+	  font-weight: 500;
+	  opacity: 0.6;
+	  text-decoration: none !important;
+	  transition: opacity 0.3s ease-in-out;
+
+	  &:hover{
+	  	color: rgb(255, 255, 255);
+			opacity: 1;
+	  }
+	}
+
+	.nav-li a{
+		opacity: 1;
+	}
+
 }
 
 .nav-mobile{
@@ -221,29 +257,6 @@ hr{
 	.active{
 		background-color: #5cb85c;
 	}
-}
-
-.nav-li a,
-.nav-link{
-	color: #fff;
-	padding: 17px 15px 15px 15px;
-  line-height: 20px;
-  position: relative;
-  display: block;
-  background: transparent;
-  font-weight: 500;
-  opacity: 0.6;
-  text-decoration: none !important;
-  transition: opacity 0.3s ease-in-out;
-
-  &:hover{
-  	color: rgb(255, 255, 255);
-		opacity: 1;
-  }
-}
-
-.nav-li a{
-	opacity: 1;
 }
 
 .nav-right{
@@ -968,6 +981,7 @@ hr{
 .information-service{
 	font-size: 16px;
 	text-align: justify;
+	min-height: 360px;
 }
 
 .service{
@@ -1020,7 +1034,7 @@ hr{
 	&:first-child{
 		.service-padding{
 			display: block;
-	    }
+		}
 	}
 
 	&:last-child{
@@ -1894,13 +1908,17 @@ footer{
 	float: right;
 	font-size: 40px;
 	position: absolute;
-  right: 40px;
+  	right: 40px;
 
 	i{
 		cursor: pointer;
 		z-index: 1;
 		position: relative;
 	}
+}
+
+.edit-profile{
+	z-index: 200;
 }
 
 .edit-user_language,
@@ -1915,12 +1933,13 @@ footer{
 	top: -31px;
 }
 
+.edit-profile-link,
 .edit-user_language-link,
 .edit-skill-link,
 .edit-experience-link,
 .edit-education-link{
 	font-size: 20px;
-  border-radius: 100%;
+  	border-radius: 100%;
 }
 
 .user-name{
@@ -2528,6 +2547,14 @@ footer{
 
 	.wrapper{
 		padding: 50px 0;
+	}
+
+	.information-service{
+		min-height: none;
+	}
+
+	.about-footer{
+		clear: both;
 	}
 
 }

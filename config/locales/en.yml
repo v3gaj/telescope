@@ -36,6 +36,11 @@ en:
     services: "Services"
     about: "About"
     contact: "Contact"
+    login: "Login"
+    logout: "Logout"
+    register: "Register"
+    profile: "Profile"
+    footer_title: "User Links"
   index:
     home:
       read_more: "Read more"

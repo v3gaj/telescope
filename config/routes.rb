@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
 	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
 		root to: 'index#home'
 		match 'services', to: 'index#services', :via => 'get'
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 		resources :degrees, :except => [:show]
 		resources :applications, :except => [:show]
 		resources :values, :except => [:show]
+		resources :services, :except => [:show, :index]
 
 		# Message Mailer
 		get 'cancel_update_user', to: 'users#cancel_update'
@@ -50,22 +51,26 @@ Rails.application.routes.draw do
 		get 'profile_applications', to: 'users#profile_applications'
 		get 'profile_maintenance', to: 'users#profile_maintenance'
 
-  	# Message Mailer
-  	post 'contact', to: 'messages#create'
+		# Services custom
+		get 'services_all', to: 'services#index'
+		post 'services_all', to: 'services#index'
 
-  	#Error routes
-  	match '/404', to: 'errors#file_not_found', via: :all
+		# Message Mailer
+		post 'contact', to: 'messages#create'
+
+		#Error routes
+		match '/404', to: 'errors#file_not_found', via: :all
 		match '/422', to: 'errors#unprocessable', via: :all
 		match '/500', to: 'errors#internal_server_error', via: :all
 
-  	# Invalid routes
-  	get '*unmatched_route', to: 'errors#file_not_found'
+		# Invalid routes
+		get '*unmatched_route', to: 'errors#file_not_found'
 
 	end
 	#get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
 	#get '', to: redirect("/#{I18n.default_locale}")
 	get '/*locale/*path', to: redirect("/#{I18n.default_locale}/%{path}")
 	get '/*path', to: redirect("/#{I18n.default_locale}/%{path}"),
-  	constraints: lambda { |req| I18n.available_locales.none? { |locale| req.path.starts_with? locale.to_s } }
-  get '', to: redirect("/#{I18n.default_locale}")
+  		constraints: lambda { |req| I18n.available_locales.none? { |locale| req.path.starts_with? locale.to_s } }
+  	get '', to: redirect("/#{I18n.default_locale}")
 end

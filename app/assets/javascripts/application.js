@@ -46,7 +46,9 @@ $(document).on('turbolinks:load', function() {
 		setTimeout(function(){
 			homeSliderHeight();
 		}, 250);
-  });
+	});
+	  
+	$('.service:first-child .header-service').addClass('service-toogle')
   
 });
 
@@ -249,14 +251,6 @@ function adjustImageDropify(){
 // AJAX RAILS FUNCTIONS
 
 function messages_create_js(){
-	$(".message_errors").html("<p class='message_notice'>Mensaje enviado exitosamente.</p>");
-	$(".message_notice").addClass("message_warning").delay(5000).queue(function(next){
-	    $(this).removeClass("message_warning");
-	    next();
-	});
-	$('html, body').animate({
-        scrollTop: $(".message_errors").position().top
-    }, 2000);
 	$(".form-clear").val('');
 }
 
@@ -268,6 +262,11 @@ function user_edit_js(){
 function user_update_js(){
 	$('.dropify').dropify();
 	imageWidthDropify();
+	toolpit();
+}
+
+function user_cancel_js(){
+	toolpit();
 }
 
 function education_cancel_js(){

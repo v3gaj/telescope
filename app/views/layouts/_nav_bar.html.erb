@@ -1,4 +1,5 @@
-<li><%= active_link_to t("menu.home"), root_path, active: :exclusive  %></li>
-<li><%= active_link_to t("menu.services"), services_path, active: :exclusive  %></li>
-<li><%= active_link_to t("menu.about"), about_path, active: :exclusive  %></li>
-<li><%= active_link_to t("menu.contact"), contact_path, active: :exclusive  %></li>
+<li><%= active_link_to t("menu.home"), root_path, active: :exclusive, :class => 'nav-link' %></li>
+<li><%= active_link_to t("menu.jobs"), jobs_path, active: :inclusive, :class => 'nav-link' %></li>
+<li><%= active_link_to t("menu.services"), services_path, active: :exclusive, :class => 'nav-link' %></li>
+<li><%= active_link_to t("menu.about"), about_path, active: :exclusive, :class => 'nav-link' %></li>
+<li><%= active_link_to t("menu.contact"), contact_path, active: :exclusive, :class => 'nav-link' %></li>

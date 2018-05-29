@@ -10,7 +10,7 @@ class Value < ApplicationRecord
 	validates_attachment_size :image, in: 0..3.megabytes, message: :exceeds_size
 	validates_attachment_content_type :image, content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)$/, message: :incorrect_format
 
-# GLOBALIZE
+	# GLOBALIZE
 	
 	translates :title, :description
 

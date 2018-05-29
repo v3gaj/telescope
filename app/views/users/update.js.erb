@@ -1,6 +1,5 @@
 <% if @user.errors.any? %>
 	$('.head-user').html("<%= j (render :partial => 'users/form_header') %>");
-	user_update_js();
 	$('.dropify-render').html("<%= j (image_tag @user.photo(:normal)) %>")
 	$('.dropify-preview').css('display', 'block')
 <% else %>
@@ -8,3 +7,4 @@
 <% end %>
 
 <%= render 'users/user_validations.js.erb' %>
+ user_update_js();
