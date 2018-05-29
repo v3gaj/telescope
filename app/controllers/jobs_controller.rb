@@ -7,12 +7,19 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    if current_user && current_user.admin?
+      @jobs = Job.all
+    else
+      @jobs = Job.all.where(status: "open")
+    end
   end
 
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    if @job.status != "Open" && current_user && !current_user.admin?
+      redirect_back fallback_location: jobs_path, alert: 'You cannot access this information.'
+    end
   end
 
   # GET /jobs/new

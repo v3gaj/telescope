@@ -1,6 +1,7 @@
 class ApplicationsController < ApplicationController
   before_action :set_application, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:create, :destroy]
+  before_action :set_job, only: [:create]
   before_action :require_user
   before_action :require_admin, only: [:index, :edit, :new, :update]
   before_action :require_same_user, only: [:create, :destroy]
@@ -32,23 +33,27 @@ class ApplicationsController < ApplicationController
     @application = Application.new(application_params)
     @application.status = 'Created'
     respond_to do |format|
-      if !@user.complete
-        format.js { flash.now[:danger] = "User incomplete" }
+      if @job.status != "Open"
+        format.js { flash.now[:danger] = "Job is not available for applications" }
       else
-        if Application.user_already_applied(@application.job_id, @user)
-          format.js { flash.now[:danger] = t("applications.create.already_applied") }
+        if !@user.complete
+          format.js { flash.now[:danger] = "User incomplete" }
         else
-          if @application.save
-            format.html { redirect_to applications_url, notice: 'Application was successfully created.' }
-            format.json { render :show, status: :created, location: @application }
-            format.js   { flash.now[:notice] = t("applications.create.successfully_applied") }
+          if Application.user_already_applied(@application.job_id, @user)
+            format.js { flash.now[:danger] = t("applications.create.already_applied") }
           else
-            format.html { render :new }
-            format.json { render json: @application.errors, status: :unprocessable_entity }
-            format.js   { render :layout => false }
+            if @application.save
+              format.html { redirect_to applications_url, notice: 'Application was successfully created.' }
+              format.json { render :show, status: :created, location: @application }
+              format.js   { flash.now[:notice] = t("applications.create.successfully_applied") }
+            else
+              format.html { render :new }
+              format.json { render json: @application.errors, status: :unprocessable_entity }
+              format.js   { render :layout => false }
+            end
           end
         end
-      end
+      end  
     end
   end
 
@@ -86,6 +91,10 @@ class ApplicationsController < ApplicationController
 
     def set_user
       @user = User.find(params[:application][:user_id])
+    end
+
+    def set_job
+      @job = Job.find(params[:application][:job_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
