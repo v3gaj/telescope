@@ -4,7 +4,7 @@
 		<div class="page-head">
 		  <h1><%=t '.title', :default => [:'helpers.titles.new.female', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
 		</div>
-		<div class="wrapper">
+		<div class="wrapper overflow-wrapper">
 			<%= render :partial => 'form' %>
 		</div>
 	</div>

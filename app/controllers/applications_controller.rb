@@ -32,17 +32,21 @@ class ApplicationsController < ApplicationController
     @application = Application.new(application_params)
     @application.status = 'Created'
     respond_to do |format|
-      if Application.user_already_applied(@application.job_id, @user)
-        format.js { flash.now[:danger] = t("applications.create.already_applied") }
+      if !@user.complete
+        format.js { flash.now[:danger] = "User incomplete" }
       else
-        if @application.save
-          format.html { redirect_to applications_url, notice: 'Application was successfully created.' }
-          format.json { render :show, status: :created, location: @application }
-          format.js   { flash.now[:notice] = t("applications.create.successfully_applied") }
+        if Application.user_already_applied(@application.job_id, @user)
+          format.js { flash.now[:danger] = t("applications.create.already_applied") }
         else
-          format.html { render :new }
-          format.json { render json: @application.errors, status: :unprocessable_entity }
-          format.js   { render :layout => false }
+          if @application.save
+            format.html { redirect_to applications_url, notice: 'Application was successfully created.' }
+            format.json { render :show, status: :created, location: @application }
+            format.js   { flash.now[:notice] = t("applications.create.successfully_applied") }
+          else
+            format.html { render :new }
+            format.json { render json: @application.errors, status: :unprocessable_entity }
+            format.js   { render :layout => false }
+          end
         end
       end
     end
