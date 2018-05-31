@@ -62,7 +62,7 @@
           </div>
         <% end %>
         <div class="job-description">
-          <%= description @job.job_description.html_safe %>
+          <%= title @job.job_description.html_safe %>
         </div>
         <div class="back-jobs-link">
           <%= link_to t('.back', :default => t("helpers.links.back")),
