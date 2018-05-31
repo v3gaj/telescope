@@ -1451,7 +1451,12 @@ footer{
     .about-footer{
     	h6{
     		text-align: right;
-    	}
+		}
+		
+		img{
+			width: 100%;
+    		filter: invert(100%);
+		}
     }
 }
 
