@@ -5,6 +5,7 @@
     <div class="page-head head-job">
       <i class="fa <%= @job.industry.icon %> icon-industry" aria-hidden="true"></i>
       <h1><%= title @job.job_title %></h1>
+      <%= title 'My page title' %>
       <h3><%= @job.industry.title %></h3>
       <hr>
       <ul class="job-details">
@@ -62,7 +63,7 @@
           </div>
         <% end %>
         <div class="job-description">
-          <%= title @job.job_description.html_safe %>
+          <%= description @job.job_description.html_safe %>
         </div>
         <div class="back-jobs-link">
           <%= link_to t('.back', :default => t("helpers.links.back")),
