@@ -34,10 +34,10 @@ class ApplicationsController < ApplicationController
     @application.status = 'Created'
     respond_to do |format|
       if @job.status != "Open"
-        format.js { flash.now[:danger] = "Job is not available for applications" }
+        format.js { flash.now[:danger] = t('applications.create.job_unavailable') }
       else
         if !@user.complete
-          format.js { flash.now[:danger] = "User incomplete" }
+          format.js { flash.now[:danger] = t('users.controller.danger') }
         else
           if Application.user_already_applied(@application.job_id, @user)
             format.js { flash.now[:danger] = t("applications.create.already_applied") }

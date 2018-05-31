@@ -20,8 +20,8 @@
 <div class="container">
 	<div class="wrapper">
 		<div class="header-wrapper">
-			<span>LATEST</span>
-			<h2>Recent Jobs</h2>
+			<span><%= t('.jobs_subtitle') %></span>
+			<h2><%= t('.jobs_title') %></h2>
 		</div>
 		<%= render :partial => 'jobs/table' %>
 	</div>
@@ -30,58 +30,58 @@
 	<div class="parallax">
 		<div class="overlay-parallax"></div>
 		<div class="info-parallax">
-			<h1>Registrate y crea tu CV</h1>
-			<%= link_to "Create account", new_user_registration_path, :class => 'btn btn-primary btn-blue' %>
+			<h1><%= t('.register_cv') %></h1>
+			<%= link_to t('.create_account'), new_user_registration_path, :class => 'btn btn-primary btn-blue' %>
 		</div>
 	</div>
 </div>
 <div class="container">
 	<div class="wrapper">
 		<div class="header-wrapper">
-			<span>Categories</span>
-			<h2>Popular categories</h2>
-			<p>Here's the most popular categories</p>
+			<span><%= t('.clients_subtitle') %></span>
+			<h2><%= t('.clients_title') %></h2>
+			<p><%= t('.clients_description') %></p>
 		</div>
 
 		<div class="services-grid">
 			<div class="service-wrapper" >
 				<a href="job-list-1.html">
-				  	<i class="fa fa-laptop"></i>
+				  	<i class="fa fa-user-circle"></i>
 				  	<h6>Technology</h6>
 				  	<p>Designer, Developer, IT Service, Front-end developer, Project management</p>
 				</a>
 			</div>
 			<div class="service-wrapper">
 				<a href="job-list-1.html">
-				  	<i class="fa fa-medkit"></i>
+				  	<i class="fa fa-user-circle"></i>
 				  	<h6>Medical</h6>
 				  	<p>Doctor, Nurse, Hospotal, Dental service, Massagist</p>
 				</a>
 			</div>
 			<div class="service-wrapper">
 				<a href="job-list-1.html">
-				  	<i class="fa fa-cutlery"></i>
+				  	<i class="fa fa-user-circle"></i>
 				  	<h6>Food</h6>
 				  	<p>Restaurant, Food service, Coffe shop, Cashier, Waitress</p>
 				</a>
 			</div>
 			<div class="service-wrapper">
 				<a href="job-list-1.html">
-				  	<i class="fa fa-newspaper-o"></i>
+				  	<i class="fa fa-user-circle"></i>
 				  	<h6>Media</h6>
 				  	<p>Journalism, Newspaper, Reporter, Writer, Cameraman</p>
 				</a>
 			</div>
 			<div class="service-wrapper">
 				<a href="job-list-1.html">
-				  	<i class="fa fa-laptop"></i>
+				  	<i class="fa fa-user-circle"></i>
 				  	<h6>Technology</h6>
 				  	<p>Designer, Developer, IT Service, Front-end developer, Project management</p>
 				</a>
 			</div>
 			<div class="service-wrapper">
 				<a href="job-list-1.html">
-				  	<i class="fa fa-institution"></i>
+				  	<i class="fa fa-user-circle"></i>
 				  	<h6>Government</h6>
 				  	<p>Federal, Law, Human resource, Manager, Biologist</p>
 				</a> 

@@ -1,6 +1,6 @@
 <div class="alert alert-danger user-incomplete-profile">
-  <h5>User incomplete, you cannot apply until the following sections are completed</h5>
+  <h5><%= t('users.header_user.user_incomplete') %></h5>
   <% @errors.each do |error| %>
-    <%= t(error) %></br>
+    <% if @errors.length > 1 && (error != @errors[0]) %> - <% end %><%= t(error) %>
   <% end %>
 </div>

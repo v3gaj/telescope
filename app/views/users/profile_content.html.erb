@@ -2,8 +2,8 @@
   <div class="container">
     <div class="wrapper">
       <div class="header-wrapper">
-        <span>Latest Degrees</span>
-        <h2>Education</h2>
+        <span><%= t('users.profile_content.education_subtitle') %></span>
+        <h2><%= t('users.profile_content.education_title') %></h2>
       </div>
       <div id="render-user-education">
         <%= render :template => 'educations/index' %>
@@ -14,8 +14,8 @@
     <div class="container">
       <div class="wrapper">
         <div class="header-wrapper">
-          <span>Past Positions</span>
-          <h2>Work Experience</h2>
+          <span><%= t('users.profile_content.experience_subtitle') %></span>
+          <h2><%= t('users.profile_content.experience_title') %></h2>
         </div>
         <div id="render-user-experience">
           <%= render :template => 'experiences/index' %>
@@ -26,8 +26,8 @@
   <div class="container">
     <div class="wrapper">
       <div class="header-wrapper">
-        <span>Expertise Areas</span>
-        <h2>Languages</h2>
+        <span><%= t('users.profile_content.languages_subtitle') %></span>
+        <h2><%= t('users.profile_content.languages_title') %></h2>
       </div>
       <div id="render-user-user_language">
         <%= render :template => 'user_languages/index' %>
@@ -38,8 +38,8 @@
     <div class="container">
       <div class="wrapper">
         <div class="header-wrapper">
-          <span>Expertise Areas</span>
-          <h2>Skills</h2>
+          <span><%= t('users.profile_content.skills_subtitle') %></span>
+          <h2><%= t('users.profile_content.skills_title') %></h2>
         </div>
         <div id="render-user-skill">
           <%= render :template => 'skills/index' %>

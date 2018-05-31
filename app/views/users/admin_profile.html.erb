@@ -2,10 +2,10 @@
   <div class="col-lg-12">
     <%- model_class = User -%>
     <div class="page-head">
-      <h1>Welcome to your admin profile <%= @user.email%></h1>
+      <h1><%= t('.profile_title') %> <%= @user.email%></h1>
     </div>
     <div class="wrapper-top">
-      <%= link_to 'Maintenance', profile_maintenance_path(:id => @user.id), :class => "tablink user-maintenance-tab", :remote => true %>
+      <%= link_to t('.maintenance'), profile_maintenance_path(:id => @user.id), :class => "tablink user-maintenance-tab", :remote => true %>
     </div>
   </div>
 </div>

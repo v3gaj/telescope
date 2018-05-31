@@ -461,7 +461,6 @@ hr{
 		position: relative;
     	margin-bottom: 48px;
     	color: #55595c;
-    	text-transform: capitalize;
 
     	&:after{
     		position: absolute;
@@ -661,7 +660,7 @@ hr{
 	}
 
 	i{
-		font-size: 40px;
+		font-size: 70px;
 	    color: #29aafe;
 	    background-color: #fff;
 	    border-radius: 100%;
@@ -2241,17 +2240,12 @@ footer{
 
 .user-incomplete-profile{
 	position: relative;
-  margin: -30px -15px 30px -16px;
-  bottom: 0;
-  padding-top: 15px;
-  padding-bottom: 30px;
-  width: inherit;
-
-  ul{
-  	li{
-  		text-align: left;
-  	}
-  }
+	margin: -30px -15px 30px -16px;
+	bottom: 0;
+	padding-top: 15px;
+	padding-bottom: 30px;
+	width: inherit;
+	text-align: left;
 }
 
 .side-bar-job{

@@ -18,7 +18,7 @@ class JobsController < ApplicationController
   # GET /jobs/1.json
   def show
     if @job.status != "Open" && current_user && !current_user.admin?
-      redirect_back fallback_location: jobs_path, alert: 'You cannot access this information.'
+      redirect_back fallback_location: jobs_path, alert: t('jobs.controller.job_unaccesible')
     end
   end
 

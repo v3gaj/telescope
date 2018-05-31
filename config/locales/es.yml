@@ -44,6 +44,51 @@ es:
   index:
     home:
       read_more: "Ver mas"
+      jobs_subtitle: "Reciente"
+      jobs_title: "Posiciones a la Vista"
+      register_cv: "Registrate y Crea tu CV"
+      create_account: "Crear cuenta"
+      clients_subtitle: "Clientes"
+      clients_title: "La Voz de Nuestros Clientes"
+      clients_description: "Asi es como nos ven nuestros clientes"
+    services:
+      services_title: "Nuestros Servicios"
+      services_subtitle: "Déjanos ser parte de su éxito"
+    about:
+      about_title: "Sobre Nosotros"
+      about_subtitle:  "Esto es lo que somos"
+      description_title: "Primeros pasos..."
+      description_content_first: "Somos una empresa que se desarrolló bajo la necesidad de un cambio en la estructura de reclutamiento, 
+                                  enfoque de capital humano y del sentido de liderazgo en las empresas costarricenses. Tenemos experiencia y 
+                                  una visión muy real sobre estos servicios porque hemos estado trabajando bajo ambas perspectivas: las del contratante 
+                                  y las del trabajador. Es por esto que comprendemos el proceso y el corre-corre de las empresas y nos sensibilizamos 
+                                  también con las expectativas de los trabajadores, entendemos la relación que debe existir entre ambos y que el 
+                                  éxito se puede alcanzar si se desarrolla un proceso correcto desde el inicio."
+      description_content_second: "Somos una empresa joven pero con experiencia y muchas ganas de hacer las cosas bien, el punto de vista 
+                                  de cada uno de nuestros socios según su contexto profesional es diferente y es ahí donde nos enriquecemos y 
+                                  podemos dar servicios de mayor valor comercial. Imagínese un proceso que cumpla con estándares eficientes de 
+                                  Ingeniería, que comprenda las tendencias y de valor al servicio con fuente de Marketing y que todo esto a su 
+                                  vez sea respaldado por una amplia experiencia en Recursos Humanos y todo lo que esto encierra."
+      description_content_third: "Estos somos nosotros y no podemos esperar el momento para trabajar con usted!"
+      vision_title: "Visión"
+      vision_content: "Ser la empresa líder en brindar servicios de asesoría en Recursos Humanos y Liderazgo en Costa Rica, creando 
+                      una fuerte relación con nuestros clientes basados en la confianza y el beneficio mutuo."
+      mission_title: "Misión"
+      mission_content: "Brindar un servicio de alta calidad llevando a nuestros clientes las soluciones más eficientes según sus necesidades. 
+                      Nos enfocamos en cada pequeño detalle de nuestro servicio de manera que sea una experiencia única para cada uno de nuestros clientes."
+      values_subtitle: "Enfoque"
+      values_title: "Nuestros Valores"
+    contact:
+      contact_title: "Contáctenos"
+      contact_subtitle: "Háganos llegar sus consultas"
+      information: "Información"
+      contact_form: "Formulario de Contacto"
+  messages:
+    new: 
+      name: "Nombre"
+      email: "Email"
+      message: "Mensaje"
+      send: "Enviar"
   users:
     header_user:
       name_surname: "Nombre & Apellido"
@@ -53,21 +98,27 @@ es:
       birth_date: "Edad"
       age: "años"
       follow_me: "Sígueme en"
+      edit_profile: "Editar Perfil"
+      user_incomplete: "La información del usuario esta incompleta, no podras aplicar a ninguna posición hasta que complete las siguientes secciones:"
+      user_complete: "Has completado exitosamente tu perfil, desde este momento eres elegible para aplicar a las posiciones disponibles."
+    admin_profile:
+      profile_title: "Bienvenido a su perfil"
+      maintenance: "Mantenimiento"
+    profile_content:
+      education_subtitle: "Títulos"
+      education_title: "Antecedentes Académicos"
+      experience_subtitle: "Posiciones Desempeñadas"
+      experience_title: "Experiencia Laboral"
+      languages_subtitle: "Comunicación"
+      languages_title: "Idiomas"
+      skills_subtitle: "Areas de Especialización"
+      skills_title: "Habilidades"
+    show:
+      profile: "Perfil"
+      applications: "Aplicaciones"
     controller:
       danger: "La información del usuario esta incompleta, podras aplicar a posiciones hasta que completes toda la información del perfil."
-      notice: "La información del usuario esta completa, puedes aplicar a posiciones."
-    model:
-      errors:
-        name: "Nombre debe ser incluido"
-        surname: "Apellido debe ser incluido"
-        headline: "Profesión debe ser incluida"
-        short_description: "Carta de presentación debe ser incluida"
-        phone_number: "Número de teléfono debe ser incluido"
-        birth_date: "Fecha de nacimiento debe ser incluida"
-        educations: "La información de educación esta incompleta, debes incluir al menos una referencia"
-        experiences: "La información sobre experiencia laboral esta incompleta, debes incluir al menos una referencia"
-        languages: "La información de idiomas esta incompleta, debes incluir al menos una referencia"
-        skills: "La información sobre habilidades esta incompleta, debes incluir al menos una habilidad"
+      notice: "Has completado exitosamente tu perfil, desde este momento eres elegible para aplicar a las posiciones disponibles."
   educations:
     index:
       not_completed: "Incompleto"
@@ -107,11 +158,14 @@ es:
       province: "Seleccione la provincia"
     table_profile:
       delete: "Eliminar Aplicación"
+    controller:
+      job_unaccesible: "Esta posición no esta disponible."
   applications:
     index:
       button_label: "Ya has aplicado!"
       successfully_applied: "Has aplicado exitosamente a esta posición!"
       already_applied: "Ya aplicaste a esta posición"
+      job_unavailable: "Esta posición no esta disponible para aplicar."
   activerecord:
     attributes:
       slide:
@@ -164,6 +218,8 @@ es:
         surname: "Apellido"
         headline: "Profesión"
         short_description: "Carta de presentación"
+        birth_date: "Fecha de Nacimiento"
+        phone_number: "Número de Télefono"
       skill:
         skill: "Habilidad"
         knowledge_percentage: "Porcentaje de conocimiento"
@@ -219,7 +275,11 @@ es:
       start_date_greater: "debe ser mayor que la fecha de inicio"
       max_skills_reached: "Has alcanzado el maximo de habilidades posibles, ya no puedes incluir mas."
       incorrect_status: "no es válido"
-
+    application: 
+      user_required: "Necesitas iniciar sesión para realizar esta accion."
+      admin_required: "Solo los usuarios administradores pueden realizar esa acción."
+      require_same_user: "Solo puedes editar la información de tu cuenta."
+      admin_not_allowed: "No puedes realizar esta acción."
 
 
 

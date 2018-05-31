@@ -7,8 +7,8 @@
     </div>
 
     <div class="wrapper-top">
-      <%= link_to 'Profile', profile_content_path(:id => @user.id), :class => "tablink user-profile-tab", :remote => true %>
-      <%= link_to 'Applications', profile_applications_path(:id => @user.id), :class => "tablink user-applications-tab", :remote => true %>
+      <%= link_to t('.profile'), profile_content_path(:id => @user.id), :class => "tablink user-profile-tab", :remote => true %>
+      <%= link_to t('.applications'), profile_applications_path(:id => @user.id), :class => "tablink user-applications-tab", :remote => true %>
     </div>
   </div>
 </div>

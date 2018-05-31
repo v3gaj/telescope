@@ -44,36 +44,88 @@ en:
   index:
     home:
       read_more: "Read more"
+      jobs_subtitle: "Latest"
+      jobs_title: "Jobs on the Horizon"
+      register_cv: "Join us and Build your CV"
+      create_account: "Create account"
+      clients_subtitle: "Clients"
+      clients_title: "Voice of our Customers"
+      clients_description: "This is how our clients see us"
+    services:
+      services_title: "Our Services"
+      services_subtitle: "Let us be part of your success"
+    about:
+      about_title: "About Us"
+      about_subtitle: "This is who we are"
+      description_title: "Fist steps..."
+      description_content_first: "We are an organization that was created by the need of a change in the recruitment structure, the human capital 
+                                  approach, and the sense of leadership in Costa Rican companies. We bring a broad experience, and a critical and
+                                  objective view about the national reality, this is because we have been in the employer and the employee side.
+                                  We thoroughly comprehend the day to day processes of companies, and we also have the sensibility to meet the
+                                  employees expectations, we understand the relationship between the parts involved and that the only way to
+                                  achieve success is develop an efficient process from the beginning."
+      description_content_second: "We are a young company but we have the experience and the commitment that guarantees that we will do things
+                                  right for you. Our value lies in the different points of view of our professional partners, which allows us to
+                                  provide a service of high commercial value. Our processes comply with strict engineered controls, that are
+                                  focused to give you a unique, and personalized customer service experience like no other in the current market,
+                                  and all this is backed up by an extensive knowledge in Human Talent Management."
+      description_content_third:  "In Telescope we want to help you expand your vision, join our contact network and let us be part of your
+                                  success."
+      vision_title: "Vision"
+      vision_content: "Become the leading consulting services company in Human Resources and Leadership in Costa Rica, by creating 
+                      a strong relationship with our clients based in a mutual benefit and trust."
+      mission_title: "Mission"
+      mission_content: "Provide a high quality service by bringing the most efficient solutions to our clients based on their needs. 
+                      We focus on every little detail of our service in a way that is a unique experience for each and everyone of our costumers."
+      values_subtitle: "Focus"
+      values_title: "Our Values"
+    contact:
+      contact_title: "Contact Us"
+      contact_subtitle: "Send us your questions"
+      information: "Information"
+      contact_form: "Contact Form"
+  messages:
+    new: 
+      name: "Name"
+      email: "Email"
+      message: "Message"
+      send: "Send"
   users:
     header_user:
       name_surname: "Name & Surname"
-      headline: "Position"
+      headline: "Title"
       short_description: "Cover letter"
       phone_number: "Phone number"
       birth_date: "Age"
       age: "years old"
       follow_me: "Follow me"
+      edit_profile: "Edit Profile"
+      user_incomplete: "User information is incomplete, you will not be able to apply for any open positions until you complete the following sections:"
+      user_complete: "You have successfully completed your profile, from now on you are eligible to apply to the Jobs on the Horizon."
+    admin_profile:
+      profile_title: "Welcome to your profile"
+      maintenance: "Maintenance"
+    profile_content:
+      education_subtitle: "Degrees"
+      education_title: "Academic Background"
+      experience_subtitle: "Past Positions"
+      experience_title: "Work Experience"
+      languages_subtitle: "Communication"
+      languages_title: "Languages"
+      skills_subtitle: "Expertise Areas"
+      skills_title: "Skills"
+    show:
+      profile: "Profile"
+      applications: "Applications"
     controller:
       danger: "User information is incomplete, you will not be able to apply for positions until you complete all profile sections."
-      notice: "User information is complete, you can apply to positions."
-    model:
-      errors:
-        name: "Nombre debe ser incluido"
-        surname: "Apellido debe ser incluido"
-        headline: "Profesión debe ser incluida"
-        short_description: "Carta de presentación debe ser incluida"
-        phone_number: "Número de teléfono debe ser incluido"
-        birth_date: "Fecha de nacimiento debe ser incluida"
-        educations: "La información de educación esta incompleta, debes incluir al menos una referencia"
-        experiences: "La información sobre experiencia laboral esta incompleta, debes incluir al menos una referencia"
-        languages: "La información de idiomas esta incompleta, debes incluir al menos una referencia"
-        skills: "La información sobre habilidades esta incompleta, debes incluir al menos una habilidad"
+      notice: "You have successfully completed your profile, from now on you are eligible to apply to the Jobs on the Horizon."
   educations:
     index:
       not_completed: "Not completed"
       add: "Add Education"
       edit: "Edit Education"
-      delete: "Delete Education"
+      delete: "Delete Education"  
     form:
       select_year: "Select year"
   experiences:
@@ -106,14 +158,20 @@ en:
       province: "Select province"
     table_profile:
       delete: "Delete Application"
+    controller:
+      job_unaccesible: "This job is not available."
   applications:
     create:
       button_label: "You have already applied!"
       successfully_applied: "You have successfully applied to this postion!"
       already_applied: "You already applied to this position"
+      job_unavailable: "Job is not available for applications."
   activerecord:
     attributes:
       user:
+        name: "First Name"
+        surname: "Given Names"
+        headline: "Title"
         short_description: "Cover letter"
   errors:
     file_not_found: 
@@ -136,5 +194,9 @@ en:
       start_date_greater: "must be equal or greater than start date"
       max_skills_reached: "You have reached the maximun of posible skills, you cannot include more skills"
       incorrect_status: "is invalid"
-
+    application: 
+      user_required: "You need to sign in to perform this action."
+      admin_required: "Only admin users are allowed to perform this action."
+      require_same_user: "You can only edit your account information."
+      admin_not_allowed: "You are not allowed to perfom this action."
 

@@ -11,28 +11,28 @@ class ApplicationController < ActionController::Base
 
 	def require_user
     if !current_user
-      flash[:danger] = "Para realizar esta acción se requiere iniciar sesión."
+      flash[:danger] = t('errors.application.user_required')
       redirect_to new_user_session_path
     end
   end
 
   def require_admin
     if !current_user.admin?
-      flash[:danger] = "Solo los usuarios administradores pueden realizar esa acción."
+      flash[:danger] = t('errors.application.admin_required')
       redirect_to root_path
     end
   end
 
   def require_same_user
     if current_user != @user
-      flash[:danger] = "Solo puedes editar tu propia cuenta."
+      flash[:danger] = t('errors.application.require_same_user')
       redirect_back fallback_location: root_path
     end
   end
 
   def admin_not_allowed
     if @user.admin?
-      flash[:danger] = "Los administradores no pueden realizar esta tarea."
+      flash[:danger] = t('errors.application.admin_not_allowed')
       redirect_back fallback_location: root_path
     end
   end

@@ -1,0 +1,10 @@
+<div id="user-incomplete-profile">
+  <% if !@user.complete? %>
+    <div class="alert alert-danger user-incomplete-profile">
+      <h5><%= t('users.header_user.user_incomplete') %></h5>
+      <% @errors.each do |error| %>
+        <% if @errors.length > 1 && (error != @errors[0]) %> - <% end %><%= t(error) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

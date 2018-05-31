@@ -37,10 +37,10 @@ class User < ApplicationRecord
 
 	def self.user_complete_validation(user)
 		educations = user.educations.all.length
-		experiences = user.experiences.all.length
+		#experiences = user.experiences.all.length
 		languages = user.user_languages.all.length
 		skills = user.skills.all.length
-		if 	user.name == nil || user.surname == nil || user.headline == nil || user.short_description == nil || user.phone_number == nil || user.birth_date == nil || user.name == "" || user.surname == "" || user.headline == "" || user.short_description == "" || user.phone_number == "" || user.birth_date == "" || educations < 1 || experiences < 1 || languages < 1 || skills < 1
+		if 	user.name == nil || user.surname == nil || user.headline == nil || user.short_description == nil || user.phone_number == nil || user.birth_date == nil || user.name == "" || user.surname == "" || user.headline == "" || user.short_description == "" || user.phone_number == "" || user.birth_date == "" || educations < 1 || languages < 1 || skills < 1
 			return false
 		else
 			return true
@@ -54,34 +54,34 @@ class User < ApplicationRecord
 		skills = user.skills.all.length
 		errors = []
 		if 	user.name == nil || user.name == ''
-			errors.push('users.model.errors.name')
+			errors.push('activerecord.attributes.user.name')
 		end
 		if 	user.surname == nil || user.surname == ''
-			errors.push('users.model.errors.surname')
+			errors.push('activerecord.attributes.user.surname')
 		end
 		if 	user.headline == nil || user.headline == ''
-			errors.push('users.model.errors.headline')
+			errors.push('activerecord.attributes.user.headline')
 		end
 		if 	user.short_description == nil || user.short_description == ''
-			errors.push('users.model.errors.short_description')
+			errors.push('activerecord.attributes.user.short_description')
 		end
 		if 	user.birth_date == nil || user.birth_date == ''
-			errors.push('users.model.errors.birth_date')
+			errors.push('activerecord.attributes.user.birth_date')
 		end
 		if 	user.phone_number == nil || user.phone_number == ''
-			errors.push('users.model.errors.phone_number')
+			errors.push('activerecord.attributes.user.phone_number')
 		end
 		if 	educations < 1
-			errors.push('users.model.errors.educations')
+			errors.push('users.profile_content.education_title')
 		end
-		if 	experiences < 1
-			errors.push('users.model.errors.experiences')
-		end
+		#if 	experiences < 1
+		#	errors.push('users.model.errors.experiences')
+		#end
 		if 	languages < 1
-			errors.push('users.model.errors.languages')
+			errors.push('users.profile_content.languages_title')
 		end
 		if 	skills < 1
-			errors.push('users.model.errors.skills')
+			errors.push('users.profile_content.skills_title')
 		end
 
 		return errors
