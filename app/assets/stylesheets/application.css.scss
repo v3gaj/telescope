@@ -516,20 +516,16 @@ hr{
 }
 
 .header-background{
-	background-image: url('bannerh.jpg');
+	background-image: url('header_background.jpg');
 }
 
-.contact-background{
-	background-image: url('banner1.jpg');
+.user-background{
+	background-image: url('user_header.jpg');
+	height: 509px;
 }
 
-.about-background{
-	background-image: url('banner1.jpg');
-}
-
-.user-background,
 .job-background{
-	background-image: url('div.jpg');
+	background-image: url('job_head.jpg');
 	height: 509px;
 }
 
@@ -1081,11 +1077,11 @@ hr{
 /************************************ABOUT***********************************/
 
 .parallax-about{
-	background-image: url('rocks.jpg');
+	background-image: url('about_parallax.jpg');
 }
 
 .parallax-home{
-	background-image: url('div.jpg');
+	background-image: url('home_parallax.jpg');
 }
 
 .parallax-wrapper{
@@ -1534,10 +1530,10 @@ footer{
 	h5{
 		font-family: Open Sans,sans-serif;
 		font-size: 17px;
-    margin-top: 6px;
-    color: #96a2b2;
-    font-weight: 300;
-  	margin-bottom: 0;
+		margin-top: 6px;
+		color: #96a2b2;
+		font-weight: 300;
+		margin-bottom: 0;
 	}
 }
 
