@@ -242,14 +242,17 @@ hr{
 			background-color: #29aafe;
 			border-bottom: 1px solid #fff;
 			margin: 0 15px 0 15px;
-    	border-radius: 3px;
+    		border-radius: 3px;
 
 			a{
 				text-decoration: none;
 				font-size: 12px;
-		    font-weight: 600;
-		    text-transform: uppercase;
-		    letter-spacing: 0;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0;
+				display: block;
+				color: #fff;
+				padding: 15px;
 			}
 		}
 	}
@@ -622,7 +625,7 @@ hr{
 .services-grid{
 	text-align: center;
 	font-size: 0;
-	a{
+	.service {
 		display: inline-block;
 	    float: left;
 	    padding: 30px 20px;
@@ -695,7 +698,9 @@ hr{
 	    font-size: 14px;
 	    line-height: 24px;
 	    display: block;
-	    height: 3.5em;	
+		height: 6.7em;
+		text-align: justify;
+		overflow: hidden;
 	}
 }
 
@@ -2384,6 +2389,10 @@ footer{
 
 	.values-wrapper{
 		width: 100%;
+	}
+
+	.scroll-top{
+		display: none;
 	}
 }
 

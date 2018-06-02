@@ -158,6 +158,9 @@ en:
       province: "Select province"
     table_profile:
       delete: "Delete Application"
+      error: "You have not applied to a job in the las six months"
+    table:
+      error: "There are no available jobs"
     controller:
       job_unaccesible: "This job is not available."
   applications:

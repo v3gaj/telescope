@@ -158,6 +158,9 @@ es:
       province: "Seleccione la provincia"
     table_profile:
       delete: "Eliminar Aplicación"
+      error: "No has aplicado a un puesto en los ultimos 6 meses"
+    table:
+      error: "No hay posiciones disponibles"
     controller:
       job_unaccesible: "Esta posición no esta disponible."
   applications:
