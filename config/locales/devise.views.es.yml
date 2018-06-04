@@ -48,8 +48,11 @@ es:
       confirmation_instructions:
         action: Confirmar mi cuenta
         greeting: "¡Bienvenido %{recipient}!"
-        instruction: 'Usted puede confirmar el correo electrónico de su cuenta a través de este enlace:'
-        subject: Instrucciones de confirmación
+        instruction: 'Has recibido este correo como parte del proceso de confirmación de tu cuenta de Telescope. Confirme que desea continuar haciendo clic en el siguiente enlace:'
+        subject: Bienvenido a Telescope!
+        ignore: 'Si no ha iniciado ningún proceso de creación de cuenta con nosotros, envíenos un correo electrónico a info@telescopehr.com y lo eliminaremos de nuestra base de datos.'
+        farewell: 'Un cordial saludo!'
+        sign: 'El Equipo de Telescope'
       email_changed:
         greeting: "¡Hola %{recipient}! "
         message: Estamos contactando contigo para notificarte que tu email ha sido cambiado a %{email}.

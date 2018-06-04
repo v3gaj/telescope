@@ -48,8 +48,11 @@ en:
       confirmation_instructions:
         action: Confirm my account
         greeting: Welcome %{recipient}!
-        instruction: 'You can confirm your account email through the link below:'
+        instruction: 'You have received this email as a confirmation for your Telescope account. Please confirm you wish to continue by clicking on the link below:'
         subject: Welcome to Telescope!
+        ignore: 'If you haven’t started any account creation process with us please send us an email to info@telescopehr.com, and we will remove you from our database.'
+        farewell: 'With warm regards!'
+        sign: 'The Telescope Team'
       email_changed:
         greeting: Hello %{recipient}!
         message: We're contacting you to notify you that your email is being changed to %{email}.
