@@ -150,6 +150,8 @@ en:
       language: "Select language"
       level: "Select level"
   jobs:
+    index: 
+      title: "Jobs on the Horizon"
     form:
       language: "Select language"
       industry: "Select industry"

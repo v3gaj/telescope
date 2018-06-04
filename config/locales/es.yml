@@ -150,6 +150,8 @@ es:
       language: "Seleccione el lenguaje"
       level: "Seleccione el nivel"
   jobs:
+    index: 
+      title: "Posiciones a la Vista"
     form:
       language: "Seleccione el languaje"
       industry: "Seleccione la industria"

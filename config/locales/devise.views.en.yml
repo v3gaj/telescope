@@ -49,7 +49,7 @@ en:
         action: Confirm my account
         greeting: Welcome %{recipient}!
         instruction: 'You can confirm your account email through the link below:'
-        subject: Confirmation instructions
+        subject: Welcome to Telescope!
       email_changed:
         greeting: Hello %{recipient}!
         message: We're contacting you to notify you that your email is being changed to %{email}.

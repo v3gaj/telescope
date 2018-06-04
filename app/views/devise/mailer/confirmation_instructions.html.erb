@@ -1,8 +1,13 @@
 <div class="panel-links">
 	<p><%= t('.greeting', recipient: @resource.email, default: "Welcome #{@resource.email}!") %></p>
 
-	<p><%= t('.instruction', default: 'You can confirm your account email through the link below:') %></p>
+	<p>You have received this email as a confirmation for your Telescope account. Please confirm you wish to continue by clicking on the link below:</p>
 
-	<p><%= link_to t('.action', default: 'Confirm my account'),
-	         confirmation_url(@resource, confirmation_token: @token, locale: I18n.locale) %></p>
+	<p><%= link_to 'LINK', confirmation_url(@resource, confirmation_token: @token, locale: I18n.locale) %></p>
+
+	<p>If you haven’t started any account creation process with us please send us an email to info@telescopehr.com, and we will remove you from our database.</p>
+
+	<p>With warm regards!</p>
+
+	<p>The Telescope Team</p>
 </div>
