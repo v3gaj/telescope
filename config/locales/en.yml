@@ -57,7 +57,7 @@ en:
     about:
       about_title: "About Us"
       about_subtitle: "This is who we are"
-      description_title: "Fist steps..."
+      description_title: "First steps..."
       description_content_first: "We are an organization that was created by the need of a change in the recruitment structure, the human capital 
                                   approach, and the sense of leadership in Costa Rican companies. We bring a broad experience, and a critical and
                                   objective view about the national reality, this is because we have been in the employer and the employee side.
@@ -160,7 +160,7 @@ en:
       province: "Select province"
     table_profile:
       delete: "Delete Application"
-      error: "You have not applied to a job in the las six months"
+      error: "You have not applied to a job in the last six months"
     table:
       error: "There are no available jobs"
     controller:
