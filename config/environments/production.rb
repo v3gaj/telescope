@@ -94,7 +94,7 @@ Rails.application.configure do
 
   # CUSTOMS
 
-  config.action_mailer.asset_host = 'http://telescopehr.com'
+  config.action_mailer.asset_host = 'https://telescopehr.com'
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { host: 'telescopehr.com', protocol: 'http' }
   config.action_mailer.delivery_method = :smtp
