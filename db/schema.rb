@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_28_224608) do
+ActiveRecord::Schema.define(version: 2018_06_08_190254) do
 
   create_table "applications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -269,12 +269,9 @@ ActiveRecord::Schema.define(version: 2018_05_28_224608) do
     t.string "name"
     t.string "surname"
     t.string "facebook"
-    t.string "google_plus"
-    t.string "twitter"
     t.string "instagram"
-    t.string "pinterest"
-    t.string "youtube"
     t.boolean "complete"
+    t.string "linkedin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -9,8 +9,17 @@ class Education < ApplicationRecord
 	validates_presence_of :institution, message: :not_blank
 	validates_presence_of :start_date, message: :not_blank
 	validates_presence_of :end_date, message: :not_blank
-	validate :start_date_is_a_year, :end_year_equal_or_greater_start_year
+	validate :start_date_is_a_year, :end_year_equal_or_greater_start_year, :validate_description_not_blank
 	before_save :save_end_date
+
+	def validate_description_not_blank
+		years = (Education::FORMSTARTYEAR..Time.now.year).to_a
+		if !years.include?(self.end_date.to_i)
+			if self.description == nil || self.description == ""
+				errors.add(:description, :not_blank)
+			end
+		end
+	end
 
 	def start_date_is_a_year
 		years = (Education::FORMSTARTYEAR..Time.now.year).to_a

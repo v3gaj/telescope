@@ -5,6 +5,11 @@
         <%= link_to t('.add'), new_user_skill_path(@user), :remote => true, :class => 'btn btn-primary btn-blue' %>
     </div>
   <% end %>
+  <% if User::user_content_allowed?(@user, current_user) %>
+    <div class="max-skills-message">
+      <%=  t('.message') %>
+    </div>
+  <% end %>
   <!-- RENDER CREATION FORM -->
   <div id="render-skill-new"></div>
   <div class="user-skills">
@@ -39,7 +44,7 @@
               <div class="progress-bar" style="width: <%= skill.knowledge_percentage %>%;"></div>
             </div>
           </li>
-        </div>   
+        </div>  
         <!-- RENDER EDIT FORM -->
         <div class="render-skill-edit"></div>
       <% end %>

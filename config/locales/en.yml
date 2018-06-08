@@ -141,6 +141,7 @@ en:
       add: "Add Skill"
       edit: "Edit Skill"
       delete: "Delete Skill"
+      message: "Dear user, we allow a maxim of ten skills per profile, please be mindful of what skills or abilities you want to portray as they will be the main filter to considering you for future positions."
   user_languages:
     index:
       add: "Add Language"

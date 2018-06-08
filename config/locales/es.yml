@@ -141,6 +141,7 @@ es:
       add: "Agregar Habilidad"
       edit: "Editar Habilidad"
       delete: "Eliminar Habilidad"
+      message: "Estimado usuario, solo permitimos un máximo de diez habilidades por perfil, sea consciente de cuales aptitudes desea que sobresalgan ya que estas serán el principal filtro para que sea considerado a posiciones futuras."
   user_languages:
     index:
       add: "Agregar Lenguaje"
@@ -212,6 +213,7 @@ es:
         institution: "Institución"
         start_date: "Fecha de Inicio"
         end_date: "Fecha de Finalización"
+        description: "Descripción"
       experience:
         company: "Compañia"
         position: "Posición"

@@ -20,7 +20,7 @@ class Skill < ApplicationRecord
 	# Validation percentage value 
 	def max_skills
 		user = User.find(self.user_id)
-		if user.skills.all.count >= 7
+		if user.skills.all.count >= 10
 			errors.add(:base, :max_skills_reached)
 		end
 	end

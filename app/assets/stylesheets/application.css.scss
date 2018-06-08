@@ -2010,6 +2010,10 @@ footer{
 	select{
 		width: 100%
 	}
+
+	textarea{
+		line-height: 20px;
+	}
 }
 
 .job-input-wrapper,
@@ -2141,6 +2145,10 @@ footer{
 .add-experience-link,
 .add-education-link{
 	text-align: center;
+}
+
+.add-skill-link{
+	margin-bottom: 20px;
 }
 
 .back-jobs-link,
@@ -2345,6 +2353,15 @@ footer{
 
 .return-home-link{
 	text-align: center;
+}
+
+.max-skills-message{
+	text-align: center;
+	padding: 20px 20px;
+	margin-bottom: 20px;
+	background-color: #5cb85c;
+  border-color: #5cb85c;
+  color: #fff;
 }
 
 /************************************RESPONSIVE***********************************/
