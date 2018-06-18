@@ -14,11 +14,11 @@
 					<li class="nav-li"><%= link_to_unless_current "Español", locale: "es" %></li>
 				<% end %>
 				<% if !current_user %>
-					<li><%= link_to t("header.login"), new_user_session_path, :class => "btn btn-primary btn-blue login-link" %></li>
-					<li><%= link_to t("header.register"), new_user_registration_path, :class => "btn btn-success btn-green register-link" %></li>
+					<li><%= link_to t("menu.login"), new_user_session_path, :class => "btn btn-primary btn-blue login-link" %></li>
+					<li><%= link_to t("menu.register"), new_user_registration_path, :class => "btn btn-success btn-green register-link" %></li>
 				<% else %>
-					<li><%= link_to t("header.profile"), profile_path, :class => "btn btn-success btn-green profile-link" %></li>
-					<li><%= link_to t("header.logout"), destroy_user_session_path, method: :delete, :class => "btn btn-danger btn-white logout-link" %></li>
+					<li><%= link_to t("menu.profile"), profile_path, :class => "btn btn-success btn-green profile-link" %></li>
+					<li><%= link_to t("menu.logout"), destroy_user_session_path, method: :delete, :class => "btn btn-danger btn-white logout-link" %></li>
 			  <% end %>
 			</ul>
 		</div>

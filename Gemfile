@@ -47,7 +47,7 @@ gem 'font-awesome-rails'
 gem "paperclip"
 gem 'bcrypt', '~> 3.1.7'
 gem 'active_link_to'
-# gem 'masonry-rails'
+gem 'masonry-rails'
 # gem 'prettyphoto-rails'
 # gem 'will_paginate', '3.1.5'
 # gem 'bootstrap-will_paginate', '0.0.10'
