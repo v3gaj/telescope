@@ -3,6 +3,6 @@ require 'rufus-scheduler'
 scheduler = Rufus::Scheduler.new
 
 
-scheduler.cron '22 12 * * thu' do
+scheduler.cron '00 10 * * fri' do
   User::user_profile_incomplete
 end
