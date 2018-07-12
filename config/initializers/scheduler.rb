@@ -3,18 +3,18 @@ require 'rufus-scheduler'
 scheduler = Rufus::Scheduler.new
 
 
-scheduler.cron '9 10 * * *' do
+scheduler.cron '40 10 * * *' do
   User::user_profile_incomplete
 end
 
-scheduler.cron '10 10 * * *' do
+scheduler.cron '42 10 * * *' do
   User::user_profile_incomplete
 end
 
-scheduler.cron '11 10 * * *' do
+scheduler.cron '43 10 * * *' do
   User::user_profile_incomplete
 end
 
-scheduler.cron '12 10 * * *' do
+scheduler.cron '44 10 * * *' do
   User::user_profile_incomplete
 end
