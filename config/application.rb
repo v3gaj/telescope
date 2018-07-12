@@ -19,5 +19,7 @@ module Telescope
     config.i18n.fallbacks = true
 
     config.exceptions_app = self.routes
+
+    config.time_zone = 'Central America'
   end
 end
