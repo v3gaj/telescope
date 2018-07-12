@@ -1,7 +1,8 @@
 require 'rufus-scheduler'
 
-scheduler = Rufus::Scheduler::singleton
+scheduler = Rufus::Scheduler.new
 
-scheduler.every '10m' do
+
+scheduler.cron '30 14 * * *' do
   User::user_profile_incomplete
 end

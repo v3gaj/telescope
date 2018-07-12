@@ -5,7 +5,6 @@ class MainMailer < ApplicationMailer
 	default from: "info@telescopehr.com"
 
 	def user_profile_incomplete(user)
-		@user = user
 		mail(to: user.email, subject: 'Incomplete Profile')
 	end
 
