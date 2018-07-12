@@ -120,4 +120,15 @@ class User < ApplicationRecord
 	end
 
 
+	# User Scheduler methods
+
+	def self.user_profile_incomplete
+		users = User.all
+		users.each do |user|
+			if !user.complete
+				MainMailer.user_profile_incomplete(user).deliver_now
+			end
+		end
+  end
+
 end
